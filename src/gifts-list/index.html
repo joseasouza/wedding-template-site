@@ -1,0 +1,33 @@
+<h5 class="semi-black-text motion-picture-font-text center">
+    Sugestões de Presentes
+</h5>
+
+<div class="card search-input">
+    <div class="row">
+        <div class="col s12">
+            <div class="input-field">
+                <input id="search-example" ng-model="giftListCtrl.search" type="search" required="">
+                <label for="search-example" class=""><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row no-pad-top">
+
+    <div class="col s12 m4" ng-repeat="product in giftListCtrl.products | filter : giftListCtrl.search">
+
+        <div class="card with-padding waves-effect waves-block waves-light">
+            <div class="card-image">
+                <img class="activator" ng-src="{{product.image}}">
+            </div>
+            <div class="card-content">
+                <span class="activator grey-text text-darken-4">{{product.name}}</span>
+
+            </div>
+        </div>
+    </div>
+
+</div>

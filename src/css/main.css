@@ -1,0 +1,213 @@
+
+@font-face {
+    font-family: 'LoveGlitter';
+    src: url('../fonts/I_Love_Glitter.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'AutumnInNovember';
+    src: url('../fonts/Autumn_in_November.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'MotionPicture';
+    src: url('../fonts/motion_picture.ttf') format('truetype');
+}
+
+body {
+    background-color: #fcfcfc;
+}
+
+nav {
+    height: 64px;
+    line-height: 56px;
+}
+
+.semi-black-text {
+    color: #444;
+}
+
+nav a.button-collapse {
+    display: inherit;
+    position: absolute;
+    height: 100%;
+    text-align: center;
+    width: 64px;
+    margin: 0px;
+}
+
+nav a.button-collapse i {
+    width: 100%;
+    height: 100%;
+}
+
+.with-padding {
+    padding: 20px;
+}
+
+.grooms-name {
+    width: 100%;
+    z-index: 2;
+    font-size: 36px;
+    line-height: 64px;
+    color: #444;
+    font-family: AutumnInNovember;
+}
+
+.grooms-name .bride {
+    width: calc(50% - 28px);
+    float: left;
+    text-align: right;
+}
+
+.grooms-name .groom {
+    width: calc(50% - 28px);
+    float: left;
+    text-align: left;
+}
+
+.grooms-name .heart {
+    text-align: center;
+    vertical-align: middle;
+    float: left;
+    width: 56px
+}
+
+.grooms-name .heart .fa-heart {
+    height: 64px;
+    line-height: 64px;
+}
+
+
+.motion-picture-font-text {
+    font-family: MotionPicture;
+    font-size: 44px;
+}
+
+.search-input .input-field label.active {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+}
+
+.search-input .input-field {
+    margin: 0;
+    height: 64px;
+}
+
+.search-input .input-field input {
+    height: 100%;
+    font-size: 1.2rem;
+    border: none;
+}
+
+.search-input .input-field i {
+    height: 64px;
+    line-height: 64px;
+}
+
+.search-input .input-field label {
+    top: 0;
+}
+
+
+.save-the-date {
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    right: 2%;
+    font-size: 20px;
+    font-family: LoveGlitter;
+}
+
+@media (max-width: 675px) {
+    .save-the-date {
+        z-index: 2;
+        width: 100%;
+        right: 0%;
+        top: 40px;
+        text-align: center;
+        font-size: 20px;
+        font-family: LoveGlitter;
+    }
+
+    .save-the-date .fa-calendar {
+        display: none;
+    }
+
+    nav {
+        height: 88px;
+    }
+
+    div.navbar-fixed {
+        height: 88px;
+    }
+    
+}
+
+@media (max-width: 480px) {
+
+    .grooms-name {
+        font-size: 32px;
+    }
+
+}
+
+@media (max-width: 430px) {
+
+    .grooms-name {
+        font-size: 20px;
+    }
+
+    .save-the-date {
+        font-size: 17px;
+        top: 32px;
+    }
+
+}
+
+@media (max-width: 350px) {
+
+    .grooms-name {
+       padding-left: 40px;
+    }
+
+    .save-the-date {
+        padding-left: 40px;
+    }
+
+}
+
+.slider .slides li img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+
+}
+
+/* Slider Indicators */
+.slider .indicators {
+    position: absolute;
+    text-align: left;
+    left: 2%;
+    margin: 0;
+    z-index: 40;
+    right: 0;
+}
+
+
+.slider .indicators .indicator-item.active {
+    background-color: #FFF;
+}
+
+.slider .indicators .indicator-item {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    margin: 24px 4px;
+    background-color: rgba(255,255,255,0.5);
+    transition: background-color .3s;
+    border-radius: 50%;
+}

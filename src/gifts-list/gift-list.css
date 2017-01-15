@@ -1,0 +1,16 @@
+.grid-gifts-list {
+    min-height: 1000px;
+}
+
+.filter-nav {
+    padding: 16px;
+}
+
+.filter-nav .header-filter-text {
+    font-weight: 300;
+    margin: 0.5rem 0 1.2rem 0;
+}
+
+.filter-nav ul li {
+    line-height: 36px;
+}

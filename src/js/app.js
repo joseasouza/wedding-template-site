@@ -8,7 +8,7 @@
         closeOnClick: true
     });
 
-    var app = angular.module('app', ['ui.router']);
+    var app = angular.module('app', ['ui.router', 'ngAnimate']);
 
     app.config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");

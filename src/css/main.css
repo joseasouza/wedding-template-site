@@ -27,6 +27,10 @@ nav {
     color: #444;
 }
 
+.semi-black {
+    background-color: #444 !important;
+}
+
 nav a.button-collapse {
     display: inherit;
     position: absolute;
@@ -210,4 +214,25 @@ nav a.button-collapse i {
     background-color: rgba(255,255,255,0.5);
     transition: background-color .3s;
     border-radius: 50%;
+}
+
+.fade.ng-hide {
+    opacity: 0;
+}
+
+.fade.ng-hide-remove,
+.fade.ng-hide-add {
+    display: block !important;
+}
+
+.fade.ng-hide-remove {
+    transition: all linear 300ms;
+}
+
+.fade.ng-hide-add {
+    transition: all linear 300ms;
+}
+
+.bold {
+    font-weight: bold;
 }

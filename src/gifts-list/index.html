@@ -22,7 +22,8 @@
             | filter : giftListCtrl.filterByCategory
             | filter : giftListCtrl.filterByPrice">
 
-        <div class="card with-padding waves-effect waves-block waves-light">
+        <div class="card with-padding waves-effect waves-block waves-light" modal open="giftListCtrl.showModal" data-target="modal"
+             ng-click="giftListCtrl.clickItem(product)">
             <div class="card-image">
                 <img class="activator" ng-src="{{product.image}}">
             </div>
@@ -33,6 +34,17 @@
         </div>
     </div>
 
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h6 class="flow-text text-center">{{giftListCtrl.selectedProduct.name}}</h6>
+        <img class="center-image" ng-src="{{giftListCtrl.selectedProduct.image}}"/>
+        <p>Preço Médio: {{giftListCtrl.selectedProduct.cost | currency:'R$'}}</p>
+    </div>
+    <div class="modal-footer">
+        <a href="javascript:void(0)" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
 </div>
 
 <div class="fixed-action-btn">
@@ -53,8 +65,45 @@
         </li>
     </ul>
     <h6>Média de Preço?</h6>
-    <div id="range"></div>
-    <h6 id="valor-range"></h6>
+    <div id="range" class="range"></div>
+    <h6 id="valor-range" class="range-price"></h6>
+    <h6>Outras Categorias</h6>
+    <ul>
+        <li>
+            <input type="checkbox" id="brideFav" ng-model="giftListCtrl.brideFav" />
+            <label for="brideFav">Favoritos da Noiva</label>
+        </li>
+        <li>
+            <input type="checkbox" id="groomFav" ng-model="giftListCtrl.groomFav" />
+            <label for="groomFav">Favoritos do Noivo</label>
+        </li>
+        <li>
+            <input type="checkbox" id="chipIn" ng-model="giftListCtrl.chipIn" />
+            <label for="chipIn">Vaquinhas</label>
+        </li>
+        <li>
+            <input type="checkbox" id="householdAppliance" ng-model="giftListCtrl.householdAppliance" />
+            <label for="householdAppliance">Eletrodomésticos</label>
+        </li>
+        <li>
+            <input type="checkbox" id="furnitures" ng-model="giftListCtrl.furnitures" />
+            <label for="furnitures">Móveis</label>
+        </li>
+        <li>
+            <input type="checkbox" id="kitchen" ng-model="giftListCtrl.kitchen" />
+            <label for="kitchen">Cozinha</label>
+        </li>
+        <li>
+            <input type="checkbox" id="livingRoom" ng-model="giftListCtrl.livingRoom" />
+            <label for="livingRoom">Sala</label>
+        </li>
+        <li>
+            <input type="checkbox" id="coupleRoom" ng-model="giftListCtrl.room" />
+            <label for="coupleRoom">Quarto do Casal</label>
+        </li>
+
+    </ul>
+
 
 
 </div>

@@ -20,7 +20,11 @@
     "materialize": "^0.97.8",
     "requirejs": "^2.3.2",
     "angular": "^1.6.1",
-    "components-font-awesome": "^4.7.0"
+    "components-font-awesome": "^4.7.0",
+    "nouislider": "^9.2.0",
+    "angular-animate": "^1.6.1",
+    "angular-ui-router": "^0.3.2",
+    "angular-materialize": "^0.2.2"
   },
   "devDependencies": {
     "jquery": "^3.1.1",

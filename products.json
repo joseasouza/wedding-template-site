@@ -6,7 +6,7 @@
     "where-buy": [{ "store": "RicardoEletro", "url": "http://www.ricardoeletro.com.br/Produto/Micro-ondas-Consul-20-Litros-Cinza-CM020BF/256-291-294-384703/" },
                   { "store": "MagazineLuiza", "url": "http://www.magazineluiza.com.br/micro-ondas-consul-cm020bfana-20l/p/0888931/ed/mond/"}],
     "cost": "365.63",
-    "tags": ["household-appliance", "kitchen", "bride-favorites", "buy-from-internet"]
+    "tags": ["household-appliance", "kitchen", "bride-favorites", "groom-favorites", "buy-from-internet"]
   },
   {
     "name": "Batedeira Planetária Arno SX80 Deluxe 300W - 8 Velocidades",
@@ -22,7 +22,7 @@
     "amount": "1",
     "where-buy": [{ "store": "MagazineLuiza", "url": "http://www.magazineluiza.com.br/liquidificador-arno-clic-lav-ln70-5-velocidades-com-filtro-600w/p/0217425/ep/liqu/" }],
     "cost": "242.91",
-    "tags": ["household-appliance", "kitchen", "bride-favorites", "buy-from-internet"]
+    "tags": ["household-appliance", "kitchen", "bride-favorites", "groom-favorites", "buy-from-internet"]
   },
   {
     "name": "Ferro de Passar a Vapor e a Seco Black&Decker AJ2032BR – 220V",

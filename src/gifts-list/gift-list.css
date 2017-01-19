@@ -27,6 +27,8 @@
     color: #9e9e9e;
 }
 
+/* Modal */
+
 .center-image {
     height: 200px;
     display: block;
@@ -36,3 +38,10 @@
 .text-center {
     text-align: center;
 }
+
+h5.how-to-give {
+    font-weight: 300;
+    font-size: 20px;
+    text-align: center;
+}
+

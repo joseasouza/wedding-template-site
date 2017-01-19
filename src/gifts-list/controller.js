@@ -23,7 +23,9 @@
         this.filterByPrice = filterByPrice;
         this.showModal = false;
         this.clickItem = clickItem;
-        this.selectedProduct = {};
+        this.containsTag = containsTag;
+        this.categories = Categories;
+        this.selectedProduct = {tags: []};
         var ctrl = this;
 
         $http.get("/products.json").then(function(data) {
@@ -70,8 +72,12 @@
                     && !ctrl.room;
         }
 
+        function containsTag(product, tag) {
+            return product.tags.indexOf(tag) >= 0;
+        }
+
         function isFilteredByCategory(product, category, model) {
-            return product.tags.indexOf(category) >= 0 && model;
+            return containsTag(product, category) && model;
         }
 
         function filterByPrice(product) {
@@ -103,6 +109,7 @@
         });
 
         $('.modal').modal();
+        $('.collapsible').collapsible();
 
     }]);
 

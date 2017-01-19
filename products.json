@@ -3,7 +3,7 @@
     "name": "Microondas Consul CM020BFANA 20L Cinza Espelhado 220V",
     "image": "/src/images/microondas_consul.png",
     "amount": "1",
-    "where-buy": [{ "store": "RicardoEletro", "url": "http://www.ricardoeletro.com.br/Produto/Micro-ondas-Consul-20-Litros-Cinza-CM020BF/256-291-294-384703/" },
+    "whereBuy": [{ "store": "RicardoEletro", "url": "http://www.ricardoeletro.com.br/Produto/Micro-ondas-Consul-20-Litros-Cinza-CM020BF/256-291-294-384703/" },
                   { "store": "MagazineLuiza", "url": "http://www.magazineluiza.com.br/micro-ondas-consul-cm020bfana-20l/p/0888931/ed/mond/"}],
     "cost": "365.63",
     "tags": ["household-appliance", "kitchen", "bride-favorites", "groom-favorites", "buy-from-internet"]
@@ -12,7 +12,7 @@
     "name": "Batedeira Planetária Arno SX80 Deluxe 300W - 8 Velocidades",
     "image": "/src/images/batedeira_arno.png",
     "amount": "1",
-    "where-buy": [{ "store": "MagazineLuiza", "url": "http://www.magazineluiza.com.br/batedeira-planetaria-arno-sx80-deluxe-300w-8-velocidades/p/0212084/ep/bapl/" }],
+    "whereBuy": [{ "store": "MagazineLuiza", "url": "http://www.magazineluiza.com.br/batedeira-planetaria-arno-sx80-deluxe-300w-8-velocidades/p/0212084/ep/bapl/" }],
     "cost": "349.90",
     "tags": ["household-appliance", "kitchen", "bride-favorites", "buy-from-internet"]
   },
@@ -20,7 +20,7 @@
     "name": "Liquidificador Arno Clic Lav LN70 5 Velocidades - com Filtro 600W",
     "image": "/src/images/liquid_arno.png",
     "amount": "1",
-    "where-buy": [{ "store": "MagazineLuiza", "url": "http://www.magazineluiza.com.br/liquidificador-arno-clic-lav-ln70-5-velocidades-com-filtro-600w/p/0217425/ep/liqu/" }],
+    "whereBuy": [{ "store": "MagazineLuiza", "url": "http://www.magazineluiza.com.br/liquidificador-arno-clic-lav-ln70-5-velocidades-com-filtro-600w/p/0217425/ep/liqu/" }],
     "cost": "242.91",
     "tags": ["household-appliance", "kitchen", "bride-favorites", "groom-favorites", "buy-from-internet"]
   },
@@ -28,7 +28,7 @@
     "name": "Ferro de Passar a Vapor e a Seco Black&Decker AJ2032BR – 220V",
     "image": "/src/images/ferro_blackdecker.png",
     "amount": "1",
-    "where-buy": [{ "store": "RicardoEletro", "url": "http://www.ricardoeletro.com.br/Produto/Ferro-a-Vapor-c-1200W-de-Potencia-Base-Ceramic-Gliss-Tanque-Destacavel-34-Saidas-de-Vapor-Autolimpeza-Spray-Frontal-AJ2032BR-BlackDecker/258-495-498-138230" }],
+    "whereBuy": [{ "store": "RicardoEletro", "url": "http://www.ricardoeletro.com.br/Produto/Ferro-a-Vapor-c-1200W-de-Potencia-Base-Ceramic-Gliss-Tanque-Destacavel-34-Saidas-de-Vapor-Autolimpeza-Spray-Frontal-AJ2032BR-BlackDecker/258-495-498-138230" }],
     "cost": "69.90",
     "tags": ["household-appliance", "kitchen", "buy-from-internet"]
   },
@@ -36,7 +36,7 @@
     "name": "Espremedor de Frutas Arno PA32 Elétrico 70W - 1,25 Litros Automático Preto",
     "image": "/src/images/espremedor_arno.png",
     "amount": "1",
-    "where-buy": [{ "store": "MagazineLuiza", "url": "http://www.magazineluiza.com.br/espremedor-de-frutas-arno-pa32-eletrico-70w-1-25-litros-automatico-preto/p/2006494/ep/espe/" }],
+    "whereBuy": [{ "store": "MagazineLuiza", "url": "http://www.magazineluiza.com.br/espremedor-de-frutas-arno-pa32-eletrico-70w-1-25-litros-automatico-preto/p/2006494/ep/espe/" }],
     "cost": "94.41",
     "tags": ["household-appliance", "kitchen", "bride-favorites", "buy-from-internet"]
   },
@@ -44,7 +44,7 @@
     "name": "Cafeteira Expresso Arno Nescafé Dolce Gusto Mini Me 15 Bar Automática",
     "image": "/src/images/cafeteira_arno.png",
     "amount": "1",
-    "where-buy": [{ "store": "Lojas Americanas", "url": "http://www.americanas.com.br/produto/119465358/cafeteira-expresso-arno-nescafe-dolce-gusto-mini-me-15-bar-automatica-roxo?condition=NEW" }],
+    "whereBuy": [{ "store": "Lojas Americanas", "url": "http://www.americanas.com.br/produto/119465358/cafeteira-expresso-arno-nescafe-dolce-gusto-mini-me-15-bar-automatica-roxo?condition=NEW" }],
     "cost": "319.90",
     "tags": ["household-appliance", "kitchen", "bride-favorites", "groom-favorites", "buy-from-internet"]
   },
@@ -52,7 +52,7 @@
     "name": "Tábua de Passar Roupas com armário acoplado",
     "image": "/src/images/tabua_passar.png",
     "amount": "1",
-    "where-buy": [{ "store": "Casas Bahia", "url": "http://www.casasbahia.com.br/Moveis/AreadeServico/TabuadePassar/Tabua-de-Passar-Roupa-2-Portas---Branco-9838788.html?IdProduto=6343255&recsource=btermo&rectype=p1_op_s14" }],
+    "whereBuy": [{ "store": "Casas Bahia", "url": "http://www.casasbahia.com.br/Moveis/AreadeServico/TabuadePassar/Tabua-de-Passar-Roupa-2-Portas---Branco-9838788.html?IdProduto=6343255&recsource=btermo&rectype=p1_op_s14" }],
     "cost": "179.90",
     "tags": ["furnitures", "buy-from-internet"]
   },
@@ -60,7 +60,7 @@
     "name": "Ventilador de Coluna Arno Silence Force VFM3",
     "image": "/src/images/ventilador_arno.png",
     "amount": "1",
-    "where-buy": [{ "store": "Magazine Luiza", "url": "http://www.magazineluiza.com.br/ventilador-de-coluna-arno-silence-force-vfm3-40cm-3-velocidades/p/0204296/ar/arvc/" }],
+    "whereBuy": [{ "store": "Magazine Luiza", "url": "http://www.magazineluiza.com.br/ventilador-de-coluna-arno-silence-force-vfm3-40cm-3-velocidades/p/0204296/ar/arvc/" }],
     "cost": "299.90",
     "tags": ["household-appliance", "groom-favorites", "buy-from-internet"]
   },
@@ -68,7 +68,7 @@
     "name": "Conjunto de Panelas 7 peças de Alumínio com Revestimento Antiaderente, Paris - Tramontina",
     "image": "/src/images/conjunto_panelas_grafite_tram.png",
     "amount": "1",
-    "where-buy": [{ "store": "Ricardo Eletro", "url": "https://goo.gl/A1dCmI" }],
+    "whereBuy": [{ "store": "Ricardo Eletro", "url": "https://goo.gl/A1dCmI" }],
     "cost": "197.91",
     "tags": ["kitchen", "buy-from-internet"]
   },
@@ -76,7 +76,7 @@
     "name": "Jogo de Panelas Alumínio 7 peças Paris Azul – Tramontina",
     "image": "/src/images/conj_panelas_azul_tramontina.png",
     "amount": "1",
-    "where-buy": [{ "store": "Lojas Americanas", "url": "https://goo.gl/cs987m" }],
+    "whereBuy": [{ "store": "Lojas Americanas", "url": "https://goo.gl/cs987m" }],
     "cost": "218.40",
     "tags": ["kitchen", "buy-from-internet", "bride-favorites"]
   },
@@ -84,7 +84,7 @@
     "name": "Cuscuzeira Caribe Tramontina – 16cm",
     "image": "/src/images/cuscuzeira_tram.png",
     "amount": "1",
-    "where-buy": [{ "store": "Iskisita Atacado (Via Direta)", "local": "https://goo.gl/maps/v7S4suA5DrJ2" },
+    "whereBuy": [{ "store": "Iskisita Atacado (Via Direta)", "local": "https://goo.gl/maps/v7S4suA5DrJ2" },
                   { "store": "Walmart", "url": "https://www.walmart.com.br/cuscuzeira-aluminio-16cm-caribe-tramontina-vermelho/4774620/pr" }],
     "cost": "119.99",
     "tags": ["kitchen", "buy-from-internet", "buy-local"]
@@ -93,7 +93,7 @@
     "name": "Bule Viena 750 Ml Soft Touch – INVICTA (Rosa ou Azul)",
     "image": "/src/images/bule_invicta_rosa.png",
     "amount": "1",
-    "where-buy": [{ "store": "LeBiscuit Midway Mall", "local": "https://goo.gl/maps/hfpqcHk31S42" }],
+    "whereBuy": [{ "store": "LeBiscuit Midway Mall", "local": "https://goo.gl/maps/hfpqcHk31S42" }],
     "cost": "60.0",
     "tags": ["kitchen", "buy-local", "bride-favorites"]
   },
@@ -101,7 +101,7 @@
     "name": "Escorredor de Pratos Inox",
     "image": "/src/images/escorredor_inox.png",
     "amount": "1",
-    "where-buy": [{ "store": "LeBiscuit Midway Mall", "local": "https://goo.gl/maps/hfpqcHk31S42" },
+    "whereBuy": [{ "store": "LeBiscuit Midway Mall", "local": "https://goo.gl/maps/hfpqcHk31S42" },
                   { "store": "Extra Midway Mall", "local": "https://goo.gl/maps/9VB49Geb6LC2"}],
     "cost": "50.0",
     "tags": ["kitchen", "buy-local"]
@@ -110,7 +110,7 @@
     "name": "Pratos Raso NEW SQUARE Azul",
     "image": "/src/images/pratos_raso_etna.png",
     "amount": "4",
-    "where-buy": [{ "store": "Etna Midway Mall", "local": "https://goo.gl/maps/94sEspCibJD2" },
+    "whereBuy": [{ "store": "Etna Midway Mall", "local": "https://goo.gl/maps/94sEspCibJD2" },
                   { "store": "Etna (Site)", "url": "https://www.etna.com.br/etna/p/prato-raso-new-square/049149?skuId=0397611" }],
     "cost": "25.99",
     "tags": ["kitchen", "buy-local", "buy-from-internet"]
@@ -119,7 +119,7 @@
     "name": "Panela de Pressão 4,5L - Rochedo",
     "image": "/src/images/panela_pressao.png",
     "amount": "1",
-    "where-buy": [{ "store": "RicardoEletro", "url": "http://www.ricardoeletro.com.br/Produto/Panela-de-Pressao-45L-Fechamento-Externo-Revestimento-Antiaderente-5-Sistemas-de-SegurancaTecnologia-Turbo-Cozinha-ate-25RapidoGrena-Rochedo/805-818-825-591351" }],
+    "whereBuy": [{ "store": "RicardoEletro", "url": "http://www.ricardoeletro.com.br/Produto/Panela-de-Pressao-45L-Fechamento-Externo-Revestimento-Antiaderente-5-Sistemas-de-SegurancaTecnologia-Turbo-Cozinha-ate-25RapidoGrena-Rochedo/805-818-825-591351" }],
     "cost": "107.91",
     "tags": ["kitchen", "buy-from-internet"]
   },
@@ -127,7 +127,7 @@
     "name": "Panela de Pressão 4,5L de Alumínio, Antiaderente, Vancouver - Tramontina",
     "image": "/src/images/panela_pressao_tramontina.png",
     "amount": "1",
-    "where-buy": [{ "store": "RicardoEletro", "url": "http://www.ricardoeletro.com.br/Produto/Panela-de-Pressao-45L-de-Aluminio-com-Revestimento-Antiaderente-Fechamento-Externo-Cabo-e-Alca-Antitermicos-Vermelha-Vancouver-Tramontina/805-818-825-528972" },
+    "whereBuy": [{ "store": "RicardoEletro", "url": "http://www.ricardoeletro.com.br/Produto/Panela-de-Pressao-45L-de-Aluminio-com-Revestimento-Antiaderente-Fechamento-Externo-Cabo-e-Alca-Antitermicos-Vermelha-Vancouver-Tramontina/805-818-825-528972" },
       { "store": "LeBiscuit Midway Mall", "local": "https://goo.gl/maps/hfpqcHk31S42" },
       { "store": "Iskisita Atacado (Via Direta)", "local": "https://goo.gl/maps/v7S4suA5DrJ2" }],
     "cost": "125.91",
@@ -137,7 +137,7 @@
     "name": "Conjunto com 6 Xícaras de Chá com Pires - Mail Order Coup Lindy Hop – Oxford",
     "image": "/src/images/conj_xicara.png",
     "amount": "1",
-    "where-buy": [{ "store": "Lojas Americanas", "url": "https://goo.gl/CjKtVP" }],
+    "whereBuy": [{ "store": "Lojas Americanas", "url": "https://goo.gl/CjKtVP" }],
     "cost": "89.99",
     "tags": ["kitchen", "buy-from-internet"]
   },
@@ -145,7 +145,7 @@
     "name": "Forma para Bolo Redonda Antiaderente - Rochedo Aroma e Sabor",
     "image": "/src/images/panela_bolo.png",
     "amount": "1",
-    "where-buy": [{ "store": "Magazine Luiza", "url": "https://goo.gl/Kp34lj" }],
+    "whereBuy": [{ "store": "Magazine Luiza", "url": "https://goo.gl/Kp34lj" }],
     "cost": "39.99",
     "tags": ["kitchen", "buy-from-internet"]
   },
@@ -153,7 +153,7 @@
     "name": "Conjunto Assadeira Alumínio 3pçs Preto - Tramontina",
     "image": "/src/images/conj_assadeira.png",
     "amount": "1",
-    "where-buy": [{ "store": "Submarino", "url": "https://goo.gl/Bp64yH" }],
+    "whereBuy": [{ "store": "Submarino", "url": "https://goo.gl/Bp64yH" }],
     "cost": "109.90",
     "tags": ["kitchen", "buy-from-internet"]
   },
@@ -161,7 +161,7 @@
     "name": "Jogo Marinex Celebrity com 3 Assadeiras Retangulares – Marinex",
     "image": "/src/images/jogo_assadeira_marinex.png",
     "amount": "1",
-    "where-buy": [{ "store": "Submarino", "url": "http://www.submarino.com.br/produto/5900357/jogo-marinex-celebrity-com-3-assadeiras-retangulares-marinex" },
+    "whereBuy": [{ "store": "Submarino", "url": "http://www.submarino.com.br/produto/5900357/jogo-marinex-celebrity-com-3-assadeiras-retangulares-marinex" },
                   { "store": "Lojas Americanas", "url": "http://www.americanas.com.br/produto/5900357?oferta=353930303335382e30303737363537343030303636302e4e4557"}],
     "cost": "69.99",
     "tags": ["kitchen", "buy-from-internet"]
@@ -170,7 +170,7 @@
     "name": "Assadeira Tramontina de Alumínio Redonda ",
     "image": "/src/images/panela_bolo_redonda.png",
     "amount": "1",
-    "where-buy": [{ "store": "Magazine Luiza", "url": "https://goo.gl/URkwJt" }],
+    "whereBuy": [{ "store": "Magazine Luiza", "url": "https://goo.gl/URkwJt" }],
     "cost": "36.90",
     "tags": ["kitchen", "buy-from-internet"]
   },
@@ -178,7 +178,7 @@
     "name": "Forma P/ Pão E Bolo Em Alumínio 26cm – Tramontina",
     "image": "/src/images/forma_brownie_tramontina.png",
     "amount": "1",
-    "where-buy": [{ "store": "Lojas Americanas", "url": "http://www.americanas.com.br/produto/18439689/forma-p-pao-e-bolo-em-aluminio-26cm-tramontina?WT.srch=1" }],
+    "whereBuy": [{ "store": "Lojas Americanas", "url": "http://www.americanas.com.br/produto/18439689/forma-p-pao-e-bolo-em-aluminio-26cm-tramontina?WT.srch=1" }],
     "cost": "35.34",
     "tags": ["kitchen", "buy-from-internet"]
   },
@@ -186,7 +186,7 @@
     "name": "Chaleira Paris 1L Alumínio Preto 10cm Tramontina",
     "image": "/src/images/chaleira_tram.png",
     "amount": "1",
-    "where-buy": [{ "store": "Iskisita Atacado (Via Direta)", "local": "https://goo.gl/maps/v7S4suA5DrJ2" }],
+    "whereBuy": [{ "store": "Iskisita Atacado (Via Direta)", "local": "https://goo.gl/maps/v7S4suA5DrJ2" }],
     "cost": "60.0",
     "tags": ["kitchen", "buy-local"]
   },
@@ -194,7 +194,7 @@
     "name": "Kit Para Sobremesa 8 peças Colorinox Gourmet Mix, Feito em Aço Inox, Lilás – Marcamix",
     "image": "/src/images/kit_sobremesas.png",
     "amount": "1",
-    "where-buy": [{ "store": "RicardoEletro", "local": "https://goo.gl/BfIZs9" }],
+    "whereBuy": [{ "store": "RicardoEletro", "local": "https://goo.gl/BfIZs9" }],
     "cost": "44.91",
     "tags": ["kitchen", "buy-from-internet"]
   }

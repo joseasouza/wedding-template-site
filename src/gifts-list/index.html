@@ -41,6 +41,29 @@
         <h6 class="flow-text text-center">{{giftListCtrl.selectedProduct.name}}</h6>
         <img class="center-image" ng-src="{{giftListCtrl.selectedProduct.image}}"/>
         <p>Preço Médio: {{giftListCtrl.selectedProduct.cost | currency:'R$'}}</p>
+        <h5 class="how-to-give">Como presentear os noivos</h5>
+
+        <ul class="collapsible popout" data-collapsible="accordion">
+            <li ng-show="giftListCtrl.containsTag(giftListCtrl.selectedProduct, giftListCtrl.categories.BUY_LOCAL)">
+                <div class="collapsible-header"><i class="material-icons">place</i>Em Natal</div>
+                <div class="collapsible-body">
+                    <div class="collection">
+                        <a ng-href="{{store.local}}" href="store.url" class="collection-item" ng-repeat="store in product.whereBuy | filter : store.url == '' ">{{store.store}}</a>
+                    </div>
+
+                </div>
+            </li>
+            <li ng-show="giftListCtrl.containsTag(giftListCtrl.selectedProduct, giftListCtrl.categories.BUY_FROM_INTERNET)">
+                <div class="collapsible-header"><i class="material-icons">computer</i>Pela Internet</div>
+                <div class="collapsible-body">
+                    <div class="collection">
+                        <a  ng-href="{{store.url}}" class="collection-item"
+                           ng-repeat="store in giftListCtrl.selectedProduct.whereBuy | filter : store.local == ''">{{store.store}}</a>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
     </div>
     <div class="modal-footer">
         <a href="javascript:void(0)" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>

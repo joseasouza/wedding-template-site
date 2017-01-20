@@ -29,6 +29,23 @@
 
 /* Modal */
 
+.modal.modal-fixed-footer {
+    height: 80%;
+    width: 80%;
+    max-height: 100%;
+}
+
+.modal .modal-content {
+    height: calc(100% - 88px);
+}
+
+.modal .modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0980392);
+    width: 100%;
+    padding: 6px 6px;
+    height: 56px;
+}
+
 .center-image {
     height: 200px;
     display: block;
@@ -43,5 +60,17 @@ h5.how-to-give {
     font-weight: 300;
     font-size: 20px;
     text-align: center;
+}
+
+.modal .account-detail {
+    padding: 0px 30px;
+}
+
+.modal .pag-seguro--logo {
+    height: 48px;
+    width: 100%;
+    background: url(/src/images/logo-lg.png) no-repeat;
+    background-position-x: 30px;
+    background-position-y: 8px;
 }
 

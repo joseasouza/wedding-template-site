@@ -34,6 +34,10 @@
     margin: auto;
 }
 
+.card.gift .card-image .preloader-wrapper {
+    margin-top: 40%;
+}
+
 .card.gift .card-content {
     position: absolute;
     bottom: 20px;

@@ -5,6 +5,7 @@
     var app = angular.module('app');
     app.controller("GiftListController", ['$http','$window', '$scope', function($http, $window, $scope) {
         //TODO needs refatoration
+        this.loading = true;
         this.products = [];
         this.showFilterButton = false;
         this.search = "";
@@ -28,8 +29,11 @@
         this.selectedProduct = {tags: []};
         var ctrl = this;
 
-        $http.get("/products.json").then(function(data) {
-            ctrl.products = data.data;
+        var database = firebase.database();
+        database.ref("/products/").once("value").then(function(snapshot) {
+            ctrl.products = snapshot.val();
+            ctrl.loading = false;
+            $scope.$digest();
         });
 
         var slider = document.getElementById('range');
@@ -51,7 +55,7 @@
             var result = this.pageYOffset >= navWrap - 300;
             if($scope.giftListCtrl.showFilterButton != result) {
                 $scope.giftListCtrl.showFilterButton = result;
-                $scope.$apply();
+                $scope.$digest();
             }
         });
 
@@ -105,7 +109,7 @@
         });
         slider.noUiSlider.on("change", function() {
             ctrl.costRange = slider.noUiSlider.get();
-            $scope.$apply();
+            $scope.$digest();
         });
 
         $('.modal').modal();

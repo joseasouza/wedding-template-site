@@ -1,5 +1,9 @@
 # wedding-template-site
-A default wedding website template using Materialize CSS and AngularJS. Use it as base to create your own marriage website.
+A default wedding website template using Materialize CSS and AngularJS.
+It connects with Firebase to collect some data information and build your website.
+It also has a /admin page with authentication where you can register new products to add in it.
+
+Use it as base to create your own marriage website.
 
 Developed by José Victor Alves de Souza.
 

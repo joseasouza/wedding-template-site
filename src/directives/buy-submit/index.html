@@ -1,0 +1,11 @@
+<form ng-attr-id="{{form}}" method="post" target="pagseguro"
+      action="https://pagseguro.uol.com.br/v2/checkout/payment.html">
+    <input name="receiverEmail" type="hidden" value="victor_rpg05@hotmail.com">
+    <input name="currency" type="hidden" value="BRL">
+    <input name="itemDescription1" type="hidden" ng-value="productName">
+    <input name="itemAmount1" type="hidden" ng-value="price">
+    <input name="extraAmount" type="hidden" ng-value="price*0.04*amount + 0.4 | number:2">
+    <input name="itemId1" type="hidden" ng-value="productName">
+    <input name="itemQuantity1" type="hidden" ng-value="amount">
+    <input name="encoding" type="hidden" value="UTF-8">
+</form>

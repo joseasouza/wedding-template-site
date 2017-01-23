@@ -27,6 +27,23 @@
     color: #9e9e9e;
 }
 
+.card.gift .card-image img {
+    max-width: 100%;
+    width: auto;
+    height: 204px;
+    margin: auto;
+}
+
+.card.gift .card-content {
+    position: absolute;
+    bottom: 20px;
+}
+
+.card.gift {
+    height: 360px;
+}
+
+
 /* Modal */
 
 .modal.modal-fixed-footer {
@@ -37,6 +54,7 @@
 
 .modal .modal-content {
     height: calc(100% - 88px);
+    padding-bottom: 56px;
 }
 
 .modal .modal-header {
@@ -64,13 +82,5 @@ h5.how-to-give {
 
 .modal .account-detail {
     padding: 0px 30px;
-}
-
-.modal .pag-seguro--logo {
-    height: 48px;
-    width: 100%;
-    background: url(/src/images/logo-lg.png) no-repeat;
-    background-position-x: 30px;
-    background-position-y: 8px;
 }
 

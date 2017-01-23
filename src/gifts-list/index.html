@@ -22,7 +22,7 @@
             | filter : giftListCtrl.filterByCategory
             | filter : giftListCtrl.filterByPrice">
 
-        <div class="card with-padding waves-effect waves-block waves-light" modal open="giftListCtrl.showModal" data-target="modal"
+        <div class="card gift with-padding waves-effect waves-block waves-light" modal open="giftListCtrl.showModal" data-target="modal"
              ng-click="giftListCtrl.clickItem(product)">
             <div class="card-image">
                 <img class="activator" ng-src="{{product.image}}">
@@ -42,7 +42,11 @@
     </div>
     <div class="modal-content">
         <img class="center-image" ng-src="{{giftListCtrl.selectedProduct.image}}"/>
-        <p>Preço Médio: {{giftListCtrl.selectedProduct.cost | currency:'R$'}}</p>
+        <p>Preço Médio: {{giftListCtrl.selectedProduct.cost | currency:'R$'}}
+           <span ng-if="giftListCtrl.selectedProduct.amount > 1">
+               <br/>Quantidade: {{giftListCtrl.selectedProduct.amount}}
+           </span>
+        </p>
         <h5 class="how-to-give">Como presentear os noivos com este produto</h5>
 
         <ul class="collapsible popout" data-collapsible="accordion">
@@ -69,7 +73,7 @@
                 <div class="collapsible-header"><i class="material-icons">attach_money</i>Transferir o valor do produto para os noivos</div>
                 <div class="collapsible-body">
                    <div class="collection">
-                       <a class="collection-item pag-seguro--logo" href="#"></a>
+                       <!--  !!!!!! -->
                        <div class="collection-item">
                            <h6>Banco do Brasil:</h6>
                            <p class="account-detail">Agência: xxx-x<br/>
@@ -78,6 +82,15 @@
                            <p class="account-detail">Agência: xxxx-x<br/>
                                Conta: xxxx-x</p>
                        </div>
+                       <a class="collection-item" submit form="pagseguro" href="#">
+                           <img src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif"
+                                alt="Pague com PagSeguro - é rápido, grátis e seguro!" />
+
+                       </a>
+                       <buy-submit form="pagseguro"
+                                   amount="giftListCtrl.selectedProduct.amount"
+                                   product-name="giftListCtrl.selectedProduct.name"
+                                   price="giftListCtrl.selectedProduct.cost"></buy-submit>
                    </div>
                 </div>
             </li>
@@ -86,7 +99,7 @@
     </div>
     <div class="modal-footer">
 
-        <a href="javascript:void(0)" class="modal-action modal-close waves-effect waves-light btn left">
+        <a href="javascript:void(0)" form="pagseguro" submit class="modal-action modal-close waves-effect waves-light btn left">
             <i class="material-icons left">card_giftcard</i>Presentear
         </a>
 

@@ -30,10 +30,12 @@
         var ctrl = this;
 
         var database = firebase.database();
+        var storage = firebase.storage();
         database.ref("/products/").once("value").then(function(snapshot) {
             ctrl.products = snapshot.val();
             ctrl.loading = false;
             $scope.$digest();
+            loadProductImages();
         });
 
         var slider = document.getElementById('range');
@@ -89,6 +91,15 @@
             var productCost = Number(product.cost);
             return productCost >= Number(priceRange[0])&& productCost < Number(priceRange[1]);
 
+        }
+
+        function loadProductImages() {
+            ctrl.products.forEach(function(product) {
+                storage.ref("/products/").child(product.image).getDownloadURL().then(function(url) {
+                    product.image_url = url;
+                    $scope.$digest();
+                });
+            });
         }
 
         function clickItem(product) {

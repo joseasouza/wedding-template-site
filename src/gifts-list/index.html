@@ -25,8 +25,7 @@
         <div class="card gift with-padding waves-effect waves-block waves-light" modal open="giftListCtrl.showModal" data-target="modal"
              ng-click="giftListCtrl.clickItem(product)">
             <div class="card-image">
-                <h6 ng-hide="product.image_url">Carregando...</h6>
-                <img ng-show="product.image_url" class="activator" ng-src="{{product.image_url}}">
+                <img ng-show="product.image_url" image-onload class="activator" ng-src="{{product.image_url}}">
             </div>
             <div class="card-content">
                 <span class="activator grey-text text-darken-4">{{product.name}}</span>

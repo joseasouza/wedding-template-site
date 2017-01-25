@@ -25,7 +25,7 @@
         <div class="card gift with-padding waves-effect waves-block waves-light" modal open="giftListCtrl.showModal" data-target="modal"
              ng-click="giftListCtrl.clickItem(product)">
             <div class="card-image">
-                <img ng-show="product.image_url" image-onload class="activator" ng-src="{{product.image_url}}">
+                <image-onload classes="'activator'" src="product.image_url"></image-onload>
             </div>
             <div class="card-content">
                 <span class="activator grey-text text-darken-4">{{product.name}}</span>
@@ -43,7 +43,7 @@
         <h6 class="flow-text text-center">{{giftListCtrl.selectedProduct.name}}</h6>
     </div>
     <div class="modal-content">
-        <img class="center-image" ng-src="{{giftListCtrl.selectedProduct.image_url}}"/>
+        <image-onload classes="'center-image'" classes-text="'center-image center'" src="giftListCtrl.selectedProduct.image_url"></image-onload>
         <p>Preço Médio: {{giftListCtrl.selectedProduct.cost | currency:'R$'}}
            <span ng-if="giftListCtrl.selectedProduct.amount > 1">
                <br/>Quantidade: {{giftListCtrl.selectedProduct.amount}}

@@ -3,10 +3,16 @@
     angular.module("app")
         .directive("imageOnload", function () {
             return {
-                restrict: 'A',
+                restrict: 'E',
+                templateUrl: "/src/directives/image-onload/",
+                scope: {
+                    src: "=src",
+                    classes: "=?classes",
+                    classesText: "=?classesText"
+                },
                 link: function(scope, element) {
                     scope.load = false;
-                    element.bind('load', function() {
+                    element.find("img").bind('load', function() {
                         scope.$apply(function() {
                             scope.load = true;
                         });

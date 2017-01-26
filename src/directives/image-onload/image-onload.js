@@ -12,6 +12,9 @@
                 },
                 link: function(scope, element) {
                     scope.load = false;
+                    scope.$watch('src', function() {
+                        scope.load = false;
+                    });
                     element.find("img").bind('load', function() {
                         scope.$apply(function() {
                             scope.load = true;

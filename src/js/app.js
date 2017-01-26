@@ -17,22 +17,4 @@
     firebase.initializeApp(config);
 
     var app = angular.module('app', ['ui.router', 'ngAnimate']);
-
-    app.config(function($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise("/");
-        $stateProvider
-            .state('gifts-list', {
-                url: '/',
-                templateUrl: "/src/gifts-list/",
-                controller:  "GiftListController",
-                controllerAs: "giftListCtrl"
-            })
-            .state('how-to-get-there', {
-                url: '/how-to-get-there',
-                templateUrl: "/src/how-to-get-there/",
-                controller:  "HowToGetThereController",
-                controllerAs: "howToGetThereCtrl"
-            });
-
-    });
 })();

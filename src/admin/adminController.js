@@ -5,9 +5,17 @@
 (function () {
     var app = angular.module('appAdmin');
     app.controller("AdminController", ['$http', 'auth', '$scope', '$state', function($http, auth, $scope, $state) {
-        if (!auth.isLogged()) {
-            $state.go('login');
-        }
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (!auth.isLogged()) {
+                $state.go('login');
+
+            }
+
+        });
+
+        // firebase.auth().signOut().then(function() {
+        //     console.log("saiu");
+        // });
     }]);
 
 })();

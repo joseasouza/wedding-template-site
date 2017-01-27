@@ -4,11 +4,16 @@
 (function() {
     var app = angular.module("app");
     app.service("auth", function() {
-
+        var auth = firebase.auth();
         this.isLogged = isLogged;
+        this.doLogin = doLogin;
 
         function isLogged() {
-            return false;
+            return auth.currentUser != null;
+        }
+
+        function doLogin(email, password) {
+            return auth.signInWithEmailAndPassword(email, password);
         }
 
     });

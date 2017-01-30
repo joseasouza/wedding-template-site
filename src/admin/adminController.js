@@ -12,10 +12,6 @@
             }
 
         });
-
-        // firebase.auth().signOut().then(function() {
-        //     console.log("saiu");
-        // });
     }]);
 
 })();

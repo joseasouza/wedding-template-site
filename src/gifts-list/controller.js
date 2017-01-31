@@ -3,7 +3,8 @@
  */
 (function () {
     var app = angular.module('app');
-    app.controller("GiftListController", ['$http','$window', '$scope', function($http, $window, $scope) {
+    app.controller("GiftListController", ['$http','$window', '$scope', 'firebaseService', function($http, $window, $scope,
+        firebaseService) {
         //TODO needs refatoration
         this.loading = true;
         this.products = [];
@@ -29,9 +30,7 @@
         this.selectedProduct = {tags: []};
         var ctrl = this;
 
-        var database = firebase.database();
-        var storage = firebase.storage();
-        database.ref("/products/").once("value").then(function(snapshot) {
+        firebaseService.select("/products/").then(function(snapshot) {
             ctrl.products = snapshot.val();
             ctrl.loading = false;
             $scope.$digest();
@@ -95,7 +94,7 @@
 
         function loadProductImages() {
             ctrl.products.forEach(function(product) {
-                storage.ref("/products/").child(product.image).getDownloadURL().then(function(url) {
+                firebaseService.downloadUrl("/products/", product.image).then(function(url) {
                     product.image_url = url;
                     $scope.$digest();
                 });

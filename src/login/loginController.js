@@ -4,7 +4,8 @@
 
 (function () {
     var app = angular.module('appAdmin');
-    app.controller("LoginController", ['$state', '$window', '$scope', 'auth', function($state, $window, $scope, auth) {
+    app.controller("LoginController", ['$state', '$window', '$scope', 'firebaseService', function($state, $window, $scope,
+                                                                                                  firebaseService) {
         var ctrl = this;
         this.loading = false;
         this.email = "";
@@ -12,9 +13,15 @@
         this.message = "";
         this.doLogin = doLogin;
 
+        firebaseService.onAuthStateChanged(function() {
+           if (firebaseService.isLogged()) {
+               $state.go('admin');
+           }
+        });
+
         function doLogin() {
             ctrl.loading = true;
-            auth.doLogin(ctrl.email, ctrl.password).then(function() {
+            firebaseService.doLogin(ctrl.email, ctrl.password).then(function() {
                 $state.go('admin');
             }).catch(function(error) {
                 ctrl.message = error.message;

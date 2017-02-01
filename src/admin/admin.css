@@ -12,3 +12,14 @@
 .admin-body {
     margin-top: 160px;
 }
+
+.card-image img {
+    max-width: 230px;
+    width: auto;
+    height: 204px;
+    margin: auto;
+}
+
+.gifts-list .card {
+    height: 360px;
+}

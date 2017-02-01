@@ -61,19 +61,6 @@
     padding-bottom: 56px;
 }
 
-.modal .modal-header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.0980392);
-    width: 100%;
-    padding: 6px 6px;
-    height: 56px;
-}
-
-.center-image {
-    height: 200px;
-    display: block;
-    margin: 16px auto;
-}
-
 .text-center {
     text-align: center;
 }

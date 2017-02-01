@@ -1,6 +1,6 @@
 <div class="card header">
     <div class="card-content">
-        <span class="card-title text-center flow-text">Products List</span>
+        <span class="card-title text-center flow-text">Manage Products List</span>
         <div class="row no-margin-bottom">
             <div class="s12 m8 l8">
 
@@ -24,11 +24,12 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row gifts-list">
 
-        <div class="col s12 m12 l12" ng-repeat="product in adminCtrl.products | filter : adminCtrl.search">
+        <div class="col s12 m6 l4" ng-repeat="product in adminCtrl.products | filter : adminCtrl.search">
 
-            <div class="card gift with-padding waves-effect waves-block waves-light">
+            <div class="card gift with-padding waves-effect waves-block waves-light"
+                 modal open="adminCtrl.showModal" data-target="modal" ng-click="adminCtrl.clickItem(product)">
                 <div class="card-image">
                     <image-onload classes="'activator'" src="product.image_url"></image-onload>
                 </div>
@@ -42,6 +43,43 @@
 
     <div class="fixed-action-btn">
         <a class="btn-floating btn-large waves-effect waves-light semi-black right"><i class="material-icons">add</i></a>
+    </div>
+</div>
+
+<div id="modal" class="modal modal-fixed-footer">
+    <div class="modal-header">
+        <h6 class="flow-text text-center">{{adminCtrl.selectedProduct.name}}</h6>
+    </div>
+    <div class="modal-content">
+        <image-onload classes="'center-image'" classes-text="'center-image center'" src="adminCtrl.selectedProduct.image_url"></image-onload>
+
+        <form ng-submit="adminCtrl.submit()" class="col s12 offset-m4 m4 offset-l4 l4">
+            <div class="row">
+                <div class="input-field">
+                    <i class="material-icons prefix">account_circle</i>
+                    <input id="icon_prefix" ng-model="loginCtrl.email" type="email" class="validate">
+                    <label for="icon_prefix">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field">
+                    <i class="material-icons prefix">vpn_key</i>
+                    <input id="icon_telephone" ng-model="loginCtrl.password" type="password" class="validate">
+                    <label for="icon_telephone">Password</label>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="modal-footer">
+
+        <a href="javascript:void(0)" form="pagseguro" submit class="modal-action modal-close waves-effect waves-light btn left">
+            <i class="material-icons left">check</i>Salvar
+        </a>
+
+        <a href="javascript:void(0)" class="modal-action modal-close waves-effect waves-green btn-flat">
+            <i class="material-icons left">close</i>Fechar
+        </a>
     </div>
 </div>
 

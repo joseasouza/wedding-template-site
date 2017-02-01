@@ -7,8 +7,12 @@
     app.controller("AdminController", ['$http', 'firebaseService', '$scope', '$state', function($http, firebaseService,
                                                                                                 $scope, $state) {
         var ctrl = this;
+        this.showModal = false;
         this.loading = true;
         this.search = "";
+        this.clickItem = clickItem;
+        this.submit = submit;
+        this.selectedProduct = { tags: []};
         this.products = [];
 
         firebaseService.onAuthStateChanged(function() {
@@ -28,6 +32,10 @@
 
         });
 
+        function submit() {
+
+        }
+
         function loadProductImages() {
             ctrl.products.forEach(function(product) {
                 firebaseService.downloadUrl("/products/", product.image).then(function(url) {
@@ -36,6 +44,13 @@
                 });
             });
         }
+
+        function clickItem(product) {
+            ctrl.selectedProduct = product;
+            ctrl.showModal = true;
+        }
+
+        $('.modal').modal();
 
     }]);
 

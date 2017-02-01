@@ -77,6 +77,13 @@ nav a.button-collapse i {
     width: 56px
 }
 
+.modal .modal-header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.0980392);
+    width: 100%;
+    padding: 6px 6px;
+    height: 56px;
+}
+
 .grooms-name .heart .fa-heart {
     height: 64px;
     line-height: 64px;
@@ -96,6 +103,12 @@ nav a.button-collapse i {
 .search-input .input-field {
     margin: 0;
     height: 64px;
+}
+
+.center-image {
+    height: 200px;
+    display: block;
+    margin: 16px auto;
 }
 
 .search-input .input-field input {

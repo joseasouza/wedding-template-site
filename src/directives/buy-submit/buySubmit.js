@@ -19,6 +19,7 @@
         });
     };
 
+    //todo retirar submit
     app.controller("SubmitController", ['$scope', '$element', SubmitController]);
     app.directive("submit", function () {
         return {

@@ -61,16 +61,16 @@
         });
 
         function filterByCategory(product) {
-            return isFilteredByCategory(product, Categories.BUY_FROM_INTERNET, ctrl.buyFromInternet)
-                || isFilteredByCategory(product, Categories.BUY_LOCAL, ctrl.buyLocal)
-                || isFilteredByCategory(product, Categories.BRIDE_FAV, ctrl.brideFav)
-                || isFilteredByCategory(product, Categories.GROOM_FAV, ctrl.groomFav)
-                || isFilteredByCategory(product, Categories.CHIP_IN, ctrl.chipIn)
-                || isFilteredByCategory(product, Categories.HOUSEHOLD_APPLIANCE, ctrl.householdAppliance)
-                || isFilteredByCategory(product, Categories.FURNITURES, ctrl.furnitures)
-                || isFilteredByCategory(product, Categories.KITCHEN, ctrl.kitchen)
-                || isFilteredByCategory(product, Categories.LIVING_ROOM, ctrl.livingRoom)
-                || isFilteredByCategory(product, Categories.ROOM, ctrl.room)
+            return isFilteredByCategory(product, Categories.BUY_FROM_INTERNET.id, ctrl.buyFromInternet)
+                || isFilteredByCategory(product, Categories.BUY_LOCAL.id, ctrl.buyLocal)
+                || isFilteredByCategory(product, Categories.BRIDE_FAV.id, ctrl.brideFav)
+                || isFilteredByCategory(product, Categories.GROOM_FAV.id, ctrl.groomFav)
+                || isFilteredByCategory(product, Categories.CHIP_IN.id, ctrl.chipIn)
+                || isFilteredByCategory(product, Categories.HOUSEHOLD_APPLIANCE.id, ctrl.householdAppliance)
+                || isFilteredByCategory(product, Categories.FURNITURES.id, ctrl.furnitures)
+                || isFilteredByCategory(product, Categories.KITCHEN.id, ctrl.kitchen)
+                || isFilteredByCategory(product, Categories.LIVING_ROOM.id, ctrl.livingRoom)
+                || isFilteredByCategory(product, Categories.ROOM.id, ctrl.room)
                 || !ctrl.buyLocal && !ctrl.buyFromInternet && !ctrl.brideFav
                     && !ctrl.groomFav && !ctrl.chipIn && !ctrl.householdAppliance
                     && !ctrl.furnitures && !ctrl.kitchen && !ctrl.livingRoom

@@ -20,6 +20,10 @@
     margin: auto;
 }
 
+.modal.modal-fixed-footer .modal-content {
+    padding-bottom: 56px;
+}
+
 .gifts-list .card {
     height: 360px;
 }

@@ -9,6 +9,7 @@
         this.downloadUrl = downloadUrl;
         this.isLogged = isLogged;
         this.doLogin = doLogin;
+        this.saveProduct = saveProduct;
         this.onAuthStateChanged = onAuthStateChanged;
 
         var config = {
@@ -29,6 +30,20 @@
 
         function select(path) {
             return database.ref(path).once("value");
+        }
+
+        function saveProduct(product, id) {
+            var isEdit = id != null && id !== "";
+
+            if (isEdit) {
+                database.ref("/products/" + id).set(product);
+            } else {
+                var id = database.ref().child('/products/').push().key;
+                var newProduct = {};
+                newProduct[id] = product;
+                database.ref("/products/").update(newProduct);
+            }
+
         }
 
         function downloadUrl(path, child) {

@@ -13,11 +13,11 @@
         this.onAuthStateChanged = onAuthStateChanged;
 
         var config = {
-            apiKey: "AIzaSyAJXzWi0VDsHL5ZgYqcnQ-zBxHjkAFZXAg",
-            authDomain: "wedding-list-site.firebaseapp.com",
-            databaseURL: "https://wedding-list-site.firebaseio.com",
-            storageBucket: "wedding-list-site.appspot.com",
-            messagingSenderId: "271294057376"
+            apiKey: "AIzaSyBiUAONmDg4YZLCVHF51pSJ0v3kQzQq3Ck",
+            authDomain: "wedding-list-site-demo.firebaseapp.com",
+            databaseURL: "https://wedding-list-site-demo.firebaseio.com",
+            storageBucket: "wedding-list-site-demo.appspot.com",
+            messagingSenderId: "1847239412"
         };
         firebase.initializeApp(config);
         var auth = firebase.auth();

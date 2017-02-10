@@ -9,7 +9,7 @@
     app.directive("preLoader", function () {
         return {
             restrict: 'E',
-            templateUrl: "/src/directives/pre-loader/",
+            templateUrl: "src/directives/pre-loader/",
             scope: {
                 show: '=show',
                 size: '@?size'

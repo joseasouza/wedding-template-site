@@ -9,13 +9,13 @@
         $stateProvider
             .state('gifts-list', {
                 url: '/',
-                templateUrl: "/src/gifts-list/",
+                templateUrl: "src/gifts-list/",
                 controller:  "GiftListController",
                 controllerAs: "giftListCtrl"
             })
             .state('how-to-get-there', {
                 url: '/how-to-get-there',
-                templateUrl: "/src/how-to-get-there/",
+                templateUrl: "src/how-to-get-there/",
                 controller:  "HowToGetThereController",
                 controllerAs: "howToGetThereCtrl"
             });

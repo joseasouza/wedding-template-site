@@ -3,7 +3,7 @@
     app.directive("buySubmit", function () {
         return {
             restrict: 'E',
-            templateUrl: "/src/directives/buy-submit/",
+            templateUrl: "src/directives/buy-submit/",
             scope: {
                 price: '=price',
                 productName: '=productName',

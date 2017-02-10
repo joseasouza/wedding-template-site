@@ -4,7 +4,7 @@
         .directive("imageOnload", function () {
             return {
                 restrict: 'E',
-                templateUrl: "/src/directives/image-onload/",
+                templateUrl: "src/directives/image-onload/",
                 scope: {
                     src: "=src",
                     classes: "=?classes",

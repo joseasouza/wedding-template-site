@@ -2,6 +2,7 @@
  * Created by victor on 26/01/17.
  */
 
+//todo refatorar. Colocar o fomrulario para ser em um controller diferente
 (function () {
     var app = angular.module('appAdmin');
     app.controller("AdminController", ['$http', 'firebaseService', '$scope', '$state' , '$timeout',
@@ -15,15 +16,15 @@
         this.submit = submit;
         this.selectedProductContainsCategory = selectedProductContainsCategory;
         this.newProduct = newProduct;
+        this.categoryCheckedChange = categoryCheckedChange;
         this.selectedProduct = new Product();
         this.selectedId = "";
         this.products = [];
         firebaseService.onAuthStateChanged(function() {
             if (firebaseService.isLogged()) {
-                firebaseService.select("/products/").then(function(snapshot) {
+                firebaseService.onSelect("/products/", function(snapshot) {
                     ctrl.products = snapshot.val();
                     ctrl.loading = false;
-                    $scope.$digest();
                     loadProductImages();
                 });
                 $scope.$digest();
@@ -33,6 +34,10 @@
                 $state.go('login');
             }
 
+        });
+
+        $scope.$watch('adminCtrl.loading', function(newValue) {
+            ctrl.loading = newValue;
         });
 
         function submit() {
@@ -59,6 +64,20 @@
             });
         }
 
+        function categoryCheckedChange(category) {
+            var isSelectedProductContainsCategory = selectedProductContainsCategory(category);
+            var isChecking = $("#" + category.id).attr("checked") !== "checked";
+            if (isChecking && !isSelectedProductContainsCategory) {
+                ctrl.selectedProduct.tags.push(category.id);
+            } else {
+                var index = ctrl.selectedProduct.tags.indexOf(category.id);
+                if (index > -1) {
+                    ctrl.selectedProduct.tags.splice(index, 1);
+                }
+            }
+
+        }
+
         function clickItem(product, id) {
             ctrl.selectedProduct = product;
             ctrl.selectedProductId = id;
@@ -73,6 +92,8 @@
 
     }]);
 
+
+    //Refatorar colocar product para ser em um outro javascript
     var Product = function() {
         this.tags = [];
         this.whereBuy =[];

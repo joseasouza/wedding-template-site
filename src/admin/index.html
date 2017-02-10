@@ -78,7 +78,7 @@
             <div class="row">
                 <p>Select Tags:</p>
                 <div class="col s4" ng-repeat="category in adminCtrl.categoriesList | filter : {showInAdminModal: true}">
-                    <input ng-checked="adminCtrl.selectedProductContainsCategory(category)" type="checkbox" id="{{category.id}}" />
+                    <input ng-click="adminCtrl.categoryCheckedChange(category)" ng-checked="adminCtrl.selectedProductContainsCategory(category)" type="checkbox" id="{{category.id}}" />
                     <label for="{{category.id}}">{{category.name}}</label>
                 </div>
 

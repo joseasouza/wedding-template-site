@@ -11,6 +11,7 @@
         this.doLogin = doLogin;
         this.saveProduct = saveProduct;
         this.onAuthStateChanged = onAuthStateChanged;
+        this.onSelect = onSelect;
 
         var config = {
             apiKey: "AIzaSyAJXzWi0VDsHL5ZgYqcnQ-zBxHjkAFZXAg",
@@ -32,15 +33,21 @@
             return database.ref(path).once("value");
         }
 
+        function onSelect(path, fnOnSelect) {
+            var productsRef = database.ref(path);
+            productsRef.on("value", fnOnSelect);
+        }
+
         function saveProduct(product, id) {
             var isEdit = id != null && id !== "";
 
+            var valueToBeSaved = angular.copy(product);
             if (isEdit) {
-                database.ref("/products/" + id).set(product);
+                database.ref("/products/" + id).set(valueToBeSaved);
             } else {
                 var id = database.ref().child('/products/').push().key;
                 var newProduct = {};
-                newProduct[id] = product;
+                newProduct[id] = valueToBeSaved;
                 database.ref("/products/").update(newProduct);
             }
 

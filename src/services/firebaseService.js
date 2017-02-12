@@ -38,12 +38,12 @@
             productsRef.on("value", fnOnSelect);
         }
 
-        function saveProduct(product, id) {
+        function saveProduct(product, id, fnOnFinish) {
             var isEdit = id != null && id !== "";
 
             var valueToBeSaved = angular.copy(product);
             if (isEdit) {
-                database.ref("/products/" + id).set(valueToBeSaved);
+                database.ref("/products/" + id).set(valueToBeSaved, fnOnFinish);
             } else {
                 var id = database.ref().child('/products/').push().key;
                 var newProduct = {};

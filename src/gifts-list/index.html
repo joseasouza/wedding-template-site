@@ -52,7 +52,7 @@
         <h5 class="how-to-give">Como presentear os noivos com este produto</h5>
 
         <ul class="collapsible popout" data-collapsible="accordion">
-            <li ng-show="giftListCtrl.containsTag(giftListCtrl.selectedProduct, giftListCtrl.categories.BUY_LOCAL)">
+            <li ng-show="giftListCtrl.containsTag(giftListCtrl.selectedProduct, giftListCtrl.categories.BUY_LOCAL.id)">
                 <div class="collapsible-header"><i class="material-icons">place</i>Comprar em Natal</div>
                 <div class="collapsible-body">
                     <div class="collection">
@@ -62,7 +62,7 @@
 
                 </div>
             </li>
-            <li ng-show="giftListCtrl.containsTag(giftListCtrl.selectedProduct, giftListCtrl.categories.BUY_FROM_INTERNET)">
+            <li ng-show="giftListCtrl.containsTag(giftListCtrl.selectedProduct, giftListCtrl.categories.BUY_FROM_INTERNET.id)">
                 <div class="collapsible-header"><i class="material-icons">computer</i>Comprar pela Internet</div>
                 <div class="collapsible-body">
                     <div class="collection">
@@ -120,11 +120,11 @@
     <h6>Por onde você gostaria de comprar?</h6>
     <ul>
         <li>
-            <input type="checkbox" id="byInternet" ng-model="giftListCtrl.buyFromInternet" />
+            <input type="checkbox" id="byInternet" ng-model="giftListCtrl.filterTags.buyFromInternet" />
             <label for="byInternet">Pela Internet</label>
         </li>
         <li>
-            <input type="checkbox" id="byNatal" ng-model="giftListCtrl.buyLocal" />
+            <input type="checkbox" id="byNatal" ng-model="giftListCtrl.filterTags.buyLocal" />
             <label for="byNatal">Em alguma loja em Natal</label>
         </li>
     </ul>
@@ -133,39 +133,10 @@
     <h6 id="valor-range" class="range-price"></h6>
     <h6>Outras Categorias</h6>
     <ul>
-        <li>
-            <input type="checkbox" id="brideFav" ng-model="giftListCtrl.brideFav" />
-            <label for="brideFav">Favoritos da Noiva</label>
+        <li ng-repeat="category in giftListCtrl.categoriesArray | filter : {showInAdminModal: true}">
+            <input type="checkbox" id="{{category.id}}" ng-model="giftListCtrl.filterTags[category.attr]" />
+            <label for="{{category.id}}">{{category.name}}</label>
         </li>
-        <li>
-            <input type="checkbox" id="groomFav" ng-model="giftListCtrl.groomFav" />
-            <label for="groomFav">Favoritos do Noivo</label>
-        </li>
-        <li>
-            <input type="checkbox" id="chipIn" ng-model="giftListCtrl.chipIn" />
-            <label for="chipIn">Vaquinhas</label>
-        </li>
-        <li>
-            <input type="checkbox" id="householdAppliance" ng-model="giftListCtrl.householdAppliance" />
-            <label for="householdAppliance">Eletrodomésticos</label>
-        </li>
-        <li>
-            <input type="checkbox" id="furnitures" ng-model="giftListCtrl.furnitures" />
-            <label for="furnitures">Móveis</label>
-        </li>
-        <li>
-            <input type="checkbox" id="kitchen" ng-model="giftListCtrl.kitchen" />
-            <label for="kitchen">Cozinha</label>
-        </li>
-        <li>
-            <input type="checkbox" id="livingRoom" ng-model="giftListCtrl.livingRoom" />
-            <label for="livingRoom">Sala</label>
-        </li>
-        <li>
-            <input type="checkbox" id="coupleRoom" ng-model="giftListCtrl.room" />
-            <label for="coupleRoom">Quarto do Casal</label>
-        </li>
-
     </ul>
 
 

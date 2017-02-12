@@ -42,7 +42,7 @@
     </div>
 
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large waves-effect waves-light semi-black right" modal open="adminCtrl.showModal" data-target="modal" ng-click="adminCtrl.newProduct()"><i class="material-icons">add</i></a>
+        <a class="btn-floating btn-large waves-effect waves-light semi-black right" ng-disabled="adminCtrl.loading" modal open="adminCtrl.showModal" data-target="modal" ng-click="adminCtrl.newProduct()"><i class="material-icons">add</i></a>
     </div>
 </div>
 
@@ -81,19 +81,66 @@
                     <input ng-click="adminCtrl.categoryCheckedChange(category)" ng-checked="adminCtrl.selectedProductContainsCategory(category)" type="checkbox" id="{{category.id}}" />
                     <label for="{{category.id}}">{{category.name}}</label>
                 </div>
+            </div>
+        </form>
+        <form name="newStore" ng-submit="adminCtrl.addNewStore()">
+            <div class="row">
+                <p>Where Buy:</p>
+                <div class="input-field col s6">
+                    <select id="selectWhereBuy" required name="whereBuy">
+                        <option value="buy-from-internet">On Internet</option>
+                        <option value="buy-local">In City</option>
+                    </select>
+                    <label>Where your guest can find this product?</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input required name="name" ng-model="adminCtrl.newStore.name" id="storeName" type="text" class="validate">
+                    <label for="storeName">Store's name</label>
+                </div>
+
+                <div class="input-field col s11">
+                    <input required type="url" name="url" placeholder="A Google Maps Link to Location or the page in store where is the product"
+                           ng-model="adminCtrl.newStore.url" id="url" class="validate">
+                    <label for="url">URL</label>
+                    <span class="red-text" ng-show="newStore.url.$error.url">Invalid URL address. It must start with 'http://' or 'https://'</span>
+                </div>
+                <div class="col s1 input-field">
+                    <button type="submit" class="btn-floating red waves-effect waves-light btn s2"
+                           ng-disabled="newStore.name.$invalid || newStore.url.$invalid || newStore.whereBuy.$invalid">
+                    <i class="material-icons">add</i>
+                    </button>
+                </div>
 
             </div>
-
         </form>
+
+            <div class="row">
+                <ul class="collection">
+                    <li class="collection-item" ng-repeat="store in adminCtrl.selectedProduct.whereBuy">
+                        <div>
+                            <div class="chip" ng-show="store.local">In City</div>
+                            <div class="chip" ng-show="store.url">On Internet</div>
+                            <span class="title center">
+                                <a target="_blank" href="{{store.local?store.local:store.url}}">
+                                    {{store.store}}
+                                </a>
+                            </span>
+                            <a ng-click="adminCtrl.removeStore(store)" href="javascript:void(0)" class="secondary-content"><i class="semi-black-text material-icons">delete</i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
 
     </div>
     <div class="modal-footer">
 
-        <a href="javascript:void(0)" ng-click="adminCtrl.submit()" class="modal-action waves-effect waves-light btn left">
+        <a href="javascript:void(0)" ng-click="adminCtrl.submit()" ng-disabled="adminCtrl.loading" class="modal-action waves-effect waves-light btn left">
             <i class="material-icons left">check</i>Save
         </a>
 
-        <a href="javascript:void(0)" class="modal-action modal-close waves-effect waves-green btn-flat">
+        <a href="javascript:void(0)" ng-disabled="adminCtrl.loading" class="modal-action modal-close waves-effect waves-green btn-flat">
             <i class="material-icons left">close</i>Close
         </a>
     </div>

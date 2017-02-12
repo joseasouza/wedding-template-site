@@ -27,3 +27,7 @@
 .gifts-list .card {
     height: 360px;
 }
+
+.modal-footer {
+    z-index: 1;
+}

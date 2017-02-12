@@ -10,16 +10,18 @@
         this.products = [];
         this.showFilterButton = false;
         this.search = "";
-        this.buyFromInternet = false;
-        this.buyLocal = false;
-        this.brideFav = false;
-        this.groomFav = false;
-        this.chipIn = false;
-        this.householdAppliance = false;
-        this.furnitures = false;
-        this.kitchen = false;
-        this.livingRoom = false;
-        this.room = false;
+        this.filterTags = {
+            buyFromInternet : false,
+            buyLocal : false,
+            brideFav : false,
+            groomFav : false,
+            chipIn : false,
+            householdAppliance : false,
+            furnitures : false,
+            kitchen : false,
+            livingRoom : false,
+            room : false
+        };
         this.costRange = [0, 1000];
         this.filterByCategory = filterByCategory;
         this.filterByPrice = filterByPrice;
@@ -27,14 +29,22 @@
         this.clickItem = clickItem;
         this.containsTag = containsTag;
         this.categories = Categories;
+        this.categoriesArray = CategoriesArray;
         this.selectedProduct = {tags: []};
         var ctrl = this;
 
-        firebaseService.select("/products/").then(function(snapshot) {
+        firebaseService.onSelect("/products/", function(snapshot) {
             ctrl.products = snapshot.val();
             ctrl.loading = false;
-            $scope.$digest();
             loadProductImages();
+        });
+
+        $scope.$watch('giftListCtrl.loading', function(newValue) {
+            ctrl.loading = newValue;
+        });
+
+        $scope.$watch('giftListCtrl.products', function(newValue) {
+            ctrl.products = newValue;
         });
 
         var slider = document.getElementById('range');
@@ -61,20 +71,20 @@
         });
 
         function filterByCategory(product) {
-            return isFilteredByCategory(product, Categories.BUY_FROM_INTERNET.id, ctrl.buyFromInternet)
-                || isFilteredByCategory(product, Categories.BUY_LOCAL.id, ctrl.buyLocal)
-                || isFilteredByCategory(product, Categories.BRIDE_FAV.id, ctrl.brideFav)
-                || isFilteredByCategory(product, Categories.GROOM_FAV.id, ctrl.groomFav)
-                || isFilteredByCategory(product, Categories.CHIP_IN.id, ctrl.chipIn)
-                || isFilteredByCategory(product, Categories.HOUSEHOLD_APPLIANCE.id, ctrl.householdAppliance)
-                || isFilteredByCategory(product, Categories.FURNITURES.id, ctrl.furnitures)
-                || isFilteredByCategory(product, Categories.KITCHEN.id, ctrl.kitchen)
-                || isFilteredByCategory(product, Categories.LIVING_ROOM.id, ctrl.livingRoom)
-                || isFilteredByCategory(product, Categories.ROOM.id, ctrl.room)
-                || !ctrl.buyLocal && !ctrl.buyFromInternet && !ctrl.brideFav
-                    && !ctrl.groomFav && !ctrl.chipIn && !ctrl.householdAppliance
-                    && !ctrl.furnitures && !ctrl.kitchen && !ctrl.livingRoom
-                    && !ctrl.room;
+            return isFilteredByCategory(product, Categories.BUY_FROM_INTERNET.id, ctrl.filterTags.buyFromInternet)
+                || isFilteredByCategory(product, Categories.BUY_LOCAL.id, ctrl.filterTags.buyLocal)
+                || isFilteredByCategory(product, Categories.BRIDE_FAV.id, ctrl.filterTags.brideFav)
+                || isFilteredByCategory(product, Categories.GROOM_FAV.id, ctrl.filterTags.groomFav)
+                || isFilteredByCategory(product, Categories.CHIP_IN.id, ctrl.filterTags.chipIn)
+                || isFilteredByCategory(product, Categories.HOUSEHOLD_APPLIANCE.id, ctrl.filterTags.householdAppliance)
+                || isFilteredByCategory(product, Categories.FURNITURES.id, ctrl.filterTags.furnitures)
+                || isFilteredByCategory(product, Categories.KITCHEN.id, ctrl.filterTags.kitchen)
+                || isFilteredByCategory(product, Categories.LIVING_ROOM.id, ctrl.filterTags.livingRoom)
+                || isFilteredByCategory(product, Categories.ROOM.id, ctrl.filterTags.room)
+                || !ctrl.filterTags.buyLocal && !ctrl.filterTags.buyFromInternet && !ctrl.filterTags.brideFav
+                    && !ctrl.filterTags.groomFav && !ctrl.filterTags.chipIn && !ctrl.filterTags.householdAppliance
+                    && !ctrl.filterTags.furnitures && !ctrl.filterTags.kitchen && !ctrl.filterTags.livingRoom
+                    && !ctrl.filterTags.room;
         }
 
         function containsTag(product, tag) {

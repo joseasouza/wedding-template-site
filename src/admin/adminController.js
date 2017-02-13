@@ -20,6 +20,7 @@
         this.removeStore = removeStore;
         this.categoryCheckedChange = categoryCheckedChange;
         this.selectedProduct = new Product();
+        this.selectedImage = "";
         this.selectedId = "";
         this.products = [];
         firebaseService.onAuthStateChanged(function() {
@@ -37,6 +38,16 @@
 
         $scope.$watch('adminCtrl.loading', function(newValue) {
             ctrl.loading = newValue;
+        });
+
+        $scope.$watch('adminCtrl.selectedImage', function(newValue) {
+            var f = document.getElementById('file').files[0],
+                r = new FileReader();
+            r.onloadend = function(e){
+                ctrl.selectedImage = e.target.result;
+                //send your binary data via $http or $resource or do anything else with it
+            };
+            r.readAsBinaryString(newValue);
         });
 
         function submit() {
@@ -153,6 +164,7 @@
         function clickItem(product, id) {
             ctrl.selectedProduct = product;
             ctrl.selectedProductId = id;
+            ctrl.selectedImage = ctrl.selectedProduct.image_url;
             $timeout(function() {
                 Materialize.updateTextFields();
             });
@@ -162,6 +174,21 @@
         $('.modal').modal();
         $('#selectWhereBuy').material_select();
 
+    }]);
+
+    app.directive("fileread", [function () {
+        return {
+            scope: {
+                fileread: "="
+            },
+            link: function (scope, element, attributes) {
+                element.bind("change", function (changeEvent) {
+                    scope.$apply(function () {
+                        scope.fileread = changeEvent.target.files[0];
+                    });
+                });
+            }
+        }
     }]);
 
 

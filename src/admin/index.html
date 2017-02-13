@@ -20,7 +20,7 @@
 <div class="admin-body">
     <div class="card" ng-show="adminCtrl.loading">
         <div class="card-content">
-            <pre-loader size="big" show="adminCtrl.loading" />
+            <pre-loader size="big" show="true" />
         </div>
     </div>
 
@@ -51,7 +51,17 @@
         <h6 class="flow-text text-center">Product Form</h6>
     </div>
     <div class="modal-content">
-        <image-onload classes="'center-image'" classes-text="'center-image center'" src="adminCtrl.selectedProduct.image_url"></image-onload>
+        <image-onload classes="'center-image'" classes-text="'center-image center'" src="adminCtrl.selectedImage"></image-onload>
+
+        <div class="file-field input-field">
+            <div class="btn">
+                <span>Change Image</span>
+                <input type="file" fileread="adminCtrl.selectedImage" accept="image/*">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+        </div>
 
         <form ng-submit="adminCtrl.submit()" action="#" id="formProduct" class="col s12 offset-m4 m4 offset-l4 l4">
             <div class="row">

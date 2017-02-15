@@ -12,6 +12,7 @@
         this.saveProduct = saveProduct;
         this.onAuthStateChanged = onAuthStateChanged;
         this.onSelect = onSelect;
+        this.uploadProductImage = uploadProductImage;
 
         var config = {
             apiKey: "AIzaSyAJXzWi0VDsHL5ZgYqcnQ-zBxHjkAFZXAg",
@@ -35,20 +36,73 @@
 
         function onSelect(path, fnOnSelect) {
             var productsRef = database.ref(path);
-            productsRef.on("value", fnOnSelect);
+            productsRef.on("value", function(snapshot) {
+                var products = [];
+                $.each(snapshot.val(), function(key, product) {
+                    product.id = key;
+                    products.push(product);
+                });
+                fnOnSelect(products);
+            });
         }
 
-        function saveProduct(product, id, fnOnFinish) {
-            var isEdit = id != null && id !== "";
+        function uploadProductImage(product, newImage, fnError, fnSuccess) {
 
-            var valueToBeSaved = angular.copy(product);
-            if (isEdit) {
-                database.ref("/products/" + id).set(valueToBeSaved, fnOnFinish);
+            if (newImage == null) {
+                fnSuccess(product.image);
             } else {
-                var id = database.ref().child('/products/').push().key;
-                var newProduct = {};
-                newProduct[id] = valueToBeSaved;
-                database.ref("/products/").update(newProduct);
+
+                var storageRef = storage.ref("products/");
+                var key = database.ref().child('/products/').push().key;
+                var fileName = key + newImage.name.substr(newImage.name.indexOf('.'));
+                var previousFileName = product.image;
+                var imageProductRef = storageRef.child(fileName);
+                var previousImageRef = storageRef.child(previousFileName);
+
+                var afterTryDelete = function () {
+                    imageProductRef.put(newImage)
+                        .on('state_changed', function () {
+                            },
+                            fnError, function () {
+                                fnSuccess(fileName);
+                            }
+                        )
+                };
+                if (product.image) {
+                    previousImageRef.delete()
+                        .then(afterTryDelete)
+                        .catch(afterTryDelete);
+                } else {
+                    afterTryDelete();
+                }
+            }
+
+        }
+
+        function saveProduct(product, newImage, fnOnFinish) {
+            var key = product.id;
+            var isEdit = key != null && key !== "";
+            //todo needs to be refactored
+            var valueToBeSaved = angular.copy(product);
+            delete valueToBeSaved.id;
+            if (isEdit) {
+                uploadProductImage(product, newImage, function(error){
+                    console.log(error);
+                }, function(image) {
+                    valueToBeSaved.image = image;
+                    database.ref("/products/" + key).set(valueToBeSaved, fnOnFinish);
+                });
+            } else {
+                key = database.ref().child('/products/').push().key;
+                uploadProductImage(product, newImage, function(error){
+                    console.log(error);
+                }, function(image) {
+                    valueToBeSaved.image = image;
+                    var newProduct = {};
+                    newProduct[key] = valueToBeSaved;
+                    database.ref("/products/").update(newProduct, fnOnFinish);
+                });
+
             }
 
         }

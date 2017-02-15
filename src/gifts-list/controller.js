@@ -33,8 +33,8 @@
         this.selectedProduct = {tags: []};
         var ctrl = this;
 
-        firebaseService.onSelect("/products/", function(snapshot) {
-            ctrl.products = snapshot.val();
+        firebaseService.onSelect("/products/", function(products) {
+            ctrl.products = products;
             ctrl.loading = false;
             loadProductImages();
         });

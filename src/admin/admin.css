@@ -15,7 +15,7 @@
 
 .card-image img {
     max-width: 230px;
-    width: auto;
+    width: auto !important;
     height: 204px;
     margin: auto;
 }

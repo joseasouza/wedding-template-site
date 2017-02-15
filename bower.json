@@ -24,7 +24,8 @@
     "nouislider": "^9.2.0",
     "angular-animate": "^1.6.1",
     "angular-ui-router": "^0.3.2",
-    "angular-materialize": "^0.2.2"
+    "angular-materialize": "^0.2.2",
+    "angular-input-masks": "^2.5.0"
   },
   "devDependencies": {
     "jquery": "^3.1.1",

@@ -2,7 +2,8 @@
  * Created by victor on 26/01/17.
  */
 (function () {
-    var appAdmin = angular.module('appAdmin', ['app']);
+
+    var appAdmin = angular.module('appAdmin', ['app', 'ui.utils.masks']);
     appAdmin.config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
         $stateProvider

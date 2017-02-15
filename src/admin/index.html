@@ -26,10 +26,10 @@
 
     <div class="row gifts-list">
 
-        <div class="col s12 m6 l4" ng-repeat="(id, product) in adminCtrl.products | filter : adminCtrl.search">
+        <div class="col s12 m6 l4" ng-repeat="product in adminCtrl.products | filter : adminCtrl.search">
 
             <div class="card gift with-padding waves-effect waves-block waves-light"
-                 modal open="adminCtrl.showModal" data-target="modal" ng-click="adminCtrl.clickItem(product, id)">
+                 modal open="adminCtrl.showModal" data-target="modal" ng-click="adminCtrl.clickItem(product)">
                 <div class="card-image">
                     <image-onload classes="'activator'" src="product.image_url"></image-onload>
                 </div>
@@ -51,12 +51,13 @@
         <h6 class="flow-text text-center">Product Form</h6>
     </div>
     <div class="modal-content">
-        <image-onload classes="'center-image'" classes-text="'center-image center'" src="adminCtrl.selectedImage"></image-onload>
+        <h6 ng-hide="adminCtrl.selectedImage.url" class="center" >No image selected</h6>
+        <img class="center-image" ng-src="{{adminCtrl.selectedImage.url}}" ng-show="adminCtrl.selectedImage.url"/>
 
         <div class="file-field input-field">
             <div class="btn">
                 <span>Change Image</span>
-                <input type="file" fileread="adminCtrl.selectedImage" accept="image/*">
+                <input type="file" selectedimage="adminCtrl.selectedImage" accept="image/*">
             </div>
             <div class="file-path-wrapper">
                 <input class="file-path validate" type="text">
@@ -67,27 +68,27 @@
             <div class="row">
 
                 <div class="input-field col s12">
-                    <input id="product_name" ng-model="adminCtrl.selectedProduct.name" type="text" class="validate">
+                    <input id="product_name" required ng-model="adminCtrl.selectedProduct.name" type="text" class="validate">
                     <label for="product_name">Product Name</label>
                 </div>
 
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <input id="product_price" ng-model="adminCtrl.selectedProduct.cost" type="number" min="0.1"
-                           step="0.01" class="validate">
+                    <input id="product_price" required ng-model="adminCtrl.selectedProduct.cost" type="text"
+                             ui-money-mask class="validate">
                     <label for="product_price">Price</label>
                 </div>
 
                 <div class="input-field col s6">
-                    <input id="product_amount" ng-model="adminCtrl.selectedProduct.amount" type="number" min="1" class="validate">
+                    <input id="product_amount" required ng-model="adminCtrl.selectedProduct.amount" type="number" min="1" class="validate">
                     <label for="product_amount">Amount</label>
                 </div>
             </div>
 
             <div class="row">
                 <p>Select Tags:</p>
-                <div class="col s4" ng-repeat="category in adminCtrl.categoriesList | filter : {showInAdminModal: true}">
+                <div class="col s12 m6 l4" ng-repeat="category in adminCtrl.categoriesList | filter : {showInAdminModal: true}">
                     <input ng-click="adminCtrl.categoryCheckedChange(category)" ng-checked="adminCtrl.selectedProductContainsCategory(category)" type="checkbox" id="{{category.id}}" />
                     <label for="{{category.id}}">{{category.name}}</label>
                 </div>
@@ -96,7 +97,7 @@
         <form name="newStore" ng-submit="adminCtrl.addNewStore()">
             <div class="row">
                 <p>Where Buy:</p>
-                <div class="input-field col s6">
+                <div class="input-field col s12 m6">
                     <select id="selectWhereBuy" required name="whereBuy">
                         <option value="buy-from-internet">On Internet</option>
                         <option value="buy-local">In City</option>
@@ -104,18 +105,18 @@
                     <label>Where your guest can find this product?</label>
                 </div>
 
-                <div class="input-field col s6">
+                <div class="input-field col s12 m6">
                     <input required name="name" ng-model="adminCtrl.newStore.name" id="storeName" type="text" class="validate">
                     <label for="storeName">Store's name</label>
                 </div>
 
-                <div class="input-field col s11">
+                <div class="input-field col s9 m11">
                     <input required type="url" name="url" placeholder="A Google Maps Link to Location or the page in store where is the product"
                            ng-model="adminCtrl.newStore.url" id="url" class="validate">
                     <label for="url">URL</label>
                     <span class="red-text" ng-show="newStore.url.$error.url">Invalid URL address. It must start with 'http://' or 'https://'</span>
                 </div>
-                <div class="col s1 input-field">
+                <div class="col s3 m1 input-field center">
                     <button type="submit" class="btn-floating red waves-effect waves-light btn s2"
                            ng-disabled="newStore.name.$invalid || newStore.url.$invalid || newStore.whereBuy.$invalid">
                     <i class="material-icons">add</i>
@@ -146,13 +147,16 @@
     </div>
     <div class="modal-footer">
 
+
+
         <a href="javascript:void(0)" ng-click="adminCtrl.submit()" ng-disabled="adminCtrl.loading" class="modal-action waves-effect waves-light btn left">
             <i class="material-icons left">check</i>Save
         </a>
 
-        <a href="javascript:void(0)" ng-disabled="adminCtrl.loading" class="modal-action modal-close waves-effect waves-green btn-flat">
+        <a href="javascript:void(0)" ng-disabled="adminCtrl.loading" class="modal-action modal-close waves-effect waves-green btn grey">
             <i class="material-icons left">close</i>Close
         </a>
+
     </div>
 </div>
 

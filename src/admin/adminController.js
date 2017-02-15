@@ -20,13 +20,12 @@
         this.removeStore = removeStore;
         this.categoryCheckedChange = categoryCheckedChange;
         this.selectedProduct = new Product();
-        this.selectedImage = "";
-        this.selectedId = "";
+        this.selectedImage = {};
         this.products = [];
         firebaseService.onAuthStateChanged(function() {
             if (firebaseService.isLogged()) {
-                firebaseService.onSelect("/products/", function(snapshot) {
-                    ctrl.products = snapshot.val();
+                firebaseService.onSelect("/products/", function(products) {
+                    ctrl.products = products;
                     ctrl.loading = false;
                     loadProductImages();
                 });
@@ -40,19 +39,10 @@
             ctrl.loading = newValue;
         });
 
-        $scope.$watch('adminCtrl.selectedImage', function(newValue) {
-            var f = document.getElementById('file').files[0],
-                r = new FileReader();
-            r.onloadend = function(e){
-                ctrl.selectedImage = e.target.result;
-                //send your binary data via $http or $resource or do anything else with it
-            };
-            r.readAsBinaryString(newValue);
-        });
-
         function submit() {
             ctrl.loading = true;
-            firebaseService.saveProduct(ctrl.selectedProduct, ctrl.selectedProductId, function(error) {
+            delete ctrl.selectedProduct.image_url;
+            firebaseService.saveProduct(ctrl.selectedProduct, ctrl.selectedImage.image, function(error) {
                 $('.modal').modal("close");
                 ctrl.loading = false;
                 $scope.$digest();
@@ -66,7 +56,7 @@
 
         function newProduct() {
             ctrl.selectedProduct = new Product();
-            ctrl.selectedProductId = null;
+            ctrl.selectedImage = {};
         }
 
         function selectedProductContainsCategory(category) {
@@ -161,10 +151,11 @@
 
         }
 
-        function clickItem(product, id) {
-            ctrl.selectedProduct = product;
-            ctrl.selectedProductId = id;
-            ctrl.selectedImage = ctrl.selectedProduct.image_url;
+        function clickItem(product) {
+            ctrl.selectedProduct = angular.copy(product);
+            ctrl.selectedImage = {
+                url: product.image_url
+            };
             $timeout(function() {
                 Materialize.updateTextFields();
             });
@@ -176,16 +167,22 @@
 
     }]);
 
-    app.directive("fileread", [function () {
+    app.directive("selectedimage", [function () {
         return {
             scope: {
-                fileread: "="
+                selectedimage: "="
             },
             link: function (scope, element, attributes) {
                 element.bind("change", function (changeEvent) {
-                    scope.$apply(function () {
-                        scope.fileread = changeEvent.target.files[0];
-                    });
+                    var r = new FileReader();
+                    r.onload = function(e){
+                        scope.selectedimage.url = e.target.result;
+                        scope.$apply();
+                    };
+                    if (changeEvent.target.files[0] && changeEvent.target.files[0] instanceof Blob) {
+                        scope.selectedimage.image = changeEvent.target.files[0];
+                        r.readAsDataURL(changeEvent.target.files[0]);
+                    }
                 });
             }
         }

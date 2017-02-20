@@ -17,14 +17,18 @@
 
 <div class="row no-pad-top grid-gifts-list" ng-hide="giftListCtrl.loading">
 
-    <div class="col s12 m4" ng-repeat="product in giftListCtrl.products
+    <div class="col s12 m6 l4" ng-repeat="product in giftListCtrl.products
             | filter : giftListCtrl.search
             | filter : giftListCtrl.filterByCategory
-            | filter : giftListCtrl.filterByPrice">
+            | filter : giftListCtrl.filterByPrice
+            | orderBy: '-cost'
+            | orderBy: giftListCtrl.orderByBridGroomFav">
 
         <div class="card gift with-padding waves-effect waves-block waves-light" modal open="giftListCtrl.showModal" data-target="modal"
              ng-click="giftListCtrl.clickItem(product)">
             <div class="card-image">
+                <i class="fa fa-heart pink-text right" ng-show="giftListCtrl.containsTag(product, giftListCtrl.categories.BRIDE_FAV.id)"></i>
+                <i class="fa fa-heart semi-black-text right" ng-show="giftListCtrl.containsTag(product, giftListCtrl.categories.GROOM_FAV.id)"></i>
                 <image-onload classes="'activator'" src="product.image_url"></image-onload>
             </div>
             <div class="card-content">

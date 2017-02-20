@@ -23,6 +23,7 @@
             room : false
         };
         this.costRange = [0, 1000];
+        this.orderByBridGroomFav = orderByBridGroomFav;
         this.filterByCategory = filterByCategory;
         this.filterByPrice = filterByPrice;
         this.showModal = false;
@@ -100,6 +101,19 @@
             var productCost = Number(product.cost);
             return productCost >= Number(priceRange[0])&& productCost < Number(priceRange[1]);
 
+        }
+
+        function orderByBridGroomFav(product) {
+            var order = 0;
+            if (containsTag(product, Categories.BRIDE_FAV.id)) {
+                order++;
+            }
+
+            if (containsTag(product, Categories.GROOM_FAV.id)) {
+                order++;
+            }
+
+            return -order;
         }
 
         function loadProductImages() {

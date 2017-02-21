@@ -1,0 +1,35 @@
+.map, .answers {
+    margin: 16px;
+}
+
+.answers {
+    float: left;
+    height: 560px;
+    width: calc(100% - 464px);
+}
+
+.save-the-date-card {
+    float: left;
+    width: 400px;
+    height: 560px;
+    margin: 16px;
+}
+
+.save-the-date-card img {
+    width: 400px !important;
+    height: auto;
+}
+
+@media (max-width: 1100px) {
+    .answers {
+        float: none;
+        height: auto;
+        width: 100%;
+        margin: 16px 0px;
+    }
+
+    .save-the-date-card {
+        float: none;
+        margin: 0px 0px 0px calc(50% - 200px);
+    }
+}

@@ -9,6 +9,7 @@
         this.downloadUrl = downloadUrl;
         this.isLogged = isLogged;
         this.doLogin = doLogin;
+        this.doLogout = doLogout;
         this.saveProduct = saveProduct;
         this.onAuthStateChanged = onAuthStateChanged;
         this.onSelect = onSelect;
@@ -117,6 +118,10 @@
 
         function doLogin(email, password) {
             return auth.signInWithEmailAndPassword(email, password);
+        }
+
+        function doLogout(fnSuccess, fnFail) {
+            auth.signOut().then(fnSuccess, fnFail);
         }
 
     });

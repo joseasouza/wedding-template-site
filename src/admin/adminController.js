@@ -12,6 +12,7 @@
         this.loading = true;
         this.search = "";
         this.newStore = {};
+        this.logout = logout;
         this.clickItem = clickItem;
         this.addNewStore = addNewStore;
         this.submit = submit;
@@ -51,6 +52,16 @@
                 } else {
                     Materialize.toast("'" + ctrl.selectedProduct.name + "' was saved successfully!" , 4000);
                 }
+            });
+        }
+
+        function logout() {
+            ctrl.loading = true;
+            firebaseService.doLogout(function() {
+                ctrl.loading = false;
+            }, function(error) {
+                Materialize.toast("Error at logout: " + error , 6000);
+                ctrl.loading = false;
             });
         }
 

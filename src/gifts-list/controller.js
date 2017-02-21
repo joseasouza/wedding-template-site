@@ -106,7 +106,7 @@
         function orderByBridGroomFav(product) {
             var order = 0;
             if (containsTag(product, Categories.BRIDE_FAV.id)) {
-                order++;
+                order += 2;
             }
 
             if (containsTag(product, Categories.GROOM_FAV.id)) {

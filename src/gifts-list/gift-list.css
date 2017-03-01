@@ -65,6 +65,10 @@
     text-align: center;
 }
 
+.collapsible-body {
+    padding: 0;
+}
+
 h5.how-to-give {
     font-weight: 300;
     font-size: 20px;

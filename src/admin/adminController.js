@@ -25,7 +25,7 @@
         this.products = [];
         firebaseService.onAuthStateChanged(function() {
             if (firebaseService.isLogged()) {
-                firebaseService.onSelect("/products/", function(products) {
+                firebaseService.getProducts().then((products) => {
                     ctrl.products = products;
                     ctrl.loading = false;
                     loadProductImages();
@@ -57,7 +57,7 @@
 
         function logout() {
             ctrl.loading = true;
-            firebaseService.doLogout(function() {
+            firebaseService.doLogout().then(function() {
                 ctrl.loading = false;
             }, function(error) {
                 Materialize.toast("Error at logout: " + error , 6000);
@@ -96,7 +96,7 @@
 
         function loadProductImages() {
             ctrl.products.forEach(function(product) {
-                firebaseService.downloadUrl("/products/", product.image).then(function(url) {
+                firebaseService.getProductImageUrl(product.image).then(function(url) {
                     product.image_url = url;
                     $scope.$digest();
                 });

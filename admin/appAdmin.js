@@ -1,6 +1,8 @@
 /**
  * Created by victor on 26/01/17.
  */
+import "src/js/app.js";
+import "angular-input-masks";
 (function () {
 
     var appAdmin = angular.module('appAdmin', ['app', 'ui.utils.masks']);
@@ -20,4 +22,10 @@
                 controllerAs: "adminCtrl"
             });
     });
+
+    require("src/services/firebaseService.js");
+    require("src/admin/adminController.js");
+    require("src/login/loginController.js");
+    require("src/directives/image-onload/image-onload.js");
+    require("src/directives/pre-loader/preloader.js");
 })();

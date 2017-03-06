@@ -5,8 +5,9 @@
 //todo refatorar. Colocar o fomrulario para ser em um controller diferente
 (function () {
     var app = angular.module('appAdmin');
-    app.controller("AdminController", ['$http', 'firebaseService', '$scope', '$state' , '$timeout',
-    function($http, firebaseService, $scope, $state, $timeout) {
+    app.controller("AdminController", AdminController);
+    AdminController.$inject = ['$http', 'firebaseService', '$scope', '$state' , '$timeout'];
+    function AdminController($http, firebaseService, $scope, $state, $timeout) {
         var ctrl = this;
         this.categoriesList = CategoriesArray;
         this.loading = true;
@@ -176,9 +177,10 @@
         $('.modal').modal();
         $('#selectWhereBuy').material_select();
 
-    }]);
+    };
 
-    app.directive("selectedimage", [function () {
+    app.directive("selectedimage", SelectedImage);
+        function SelectedImage() {
         return {
             scope: {
                 selectedimage: "="
@@ -197,7 +199,7 @@
                 });
             }
         }
-    }]);
+    };
 
 
     //Refatorar colocar product para ser em um outro javascript

@@ -31,3 +31,9 @@
 .modal-footer {
     z-index: 1;
 }
+
+.btn-logout {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}

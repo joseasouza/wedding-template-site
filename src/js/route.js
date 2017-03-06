@@ -3,9 +3,9 @@
  */
 (function() {
 
-    var app = angular.module('app');
-    routeConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
-    function routeConfig($stateProvider, $urlRouterProvider) {
+    var app = angular.module('appGiftList');
+    RouteConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function RouteConfig($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
         $stateProvider
             .state('gifts-list', {
@@ -21,6 +21,6 @@
                 controllerAs: "howToGetThereCtrl"
             });
     };
-    app.config(routeConfig);
+    app.config(RouteConfig);
 
 })();

@@ -1,0 +1,35 @@
+<div ng-controller="FilterNavController as filterCtrl">
+
+    <div class="fixed-action-btn">
+        <a id="filterGiftsBtn" ng-show="filterCtrl.showFilterButton" data-activates="filter-nav"
+           class="btn-floating btn-large waves-effect waves-light pink fade"><i
+                class="material-icons">filter_list</i></a>
+    </div>
+
+    <div id="filter-nav" class="side-nav filter-nav">
+        <h6 class="center header-filter-text">Filtre os presentes por categorias</h6>
+        <h6>Por onde você gostaria de comprar?</h6>
+        <ul>
+            <li>
+                <input type="checkbox" id="byInternet" ng-model="filterCtrl.filterTags.buyFromInternet"/>
+                <label for="byInternet">Pela Internet</label>
+            </li>
+            <li>
+                <input type="checkbox" id="byNatal" ng-model="filterCtrl.filterTags.buyLocal"/>
+                <label for="byNatal">Em alguma loja em Natal</label>
+            </li>
+        </ul>
+        <h6>Média de Preço?</h6>
+        <div id="range" class="range"></div>
+        <h6 id="valor-range" class="range-price"></h6>
+        <h6>Outras Categorias</h6>
+        <ul>
+            <li ng-repeat="category in filterCtrl.categoriesArray | filter : {showInAdminModal: true}">
+                <input type="checkbox" id="{{category.id}}" ng-model="filterCtrl.filterService.filterTags[category.attr]"/>
+                <label for="{{category.id}}">{{category.name}}</label>
+            </li>
+        </ul>
+
+
+    </div>
+</div>

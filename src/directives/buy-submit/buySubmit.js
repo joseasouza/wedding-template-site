@@ -1,6 +1,6 @@
-(function () {
-    var app = angular.module("app");
-    app.directive("buySubmit", function () {
+(() => {
+    var app = angular.module("appGiftList");
+    app.directive("buySubmit", () => {
         return {
             restrict: 'E',
             templateUrl: "/src/directives/buy-submit/",
@@ -14,14 +14,14 @@
     });
 
     var SubmitController = function($scope, $element) {
-        $element.bind('click', function() {
+        $element.bind('click',() => {
             $("#" + $scope.form).submit();
         });
     };
 
     //todo retirar submit
     app.controller("SubmitController", ['$scope', '$element', SubmitController]);
-    app.directive("submit", function () {
+    app.directive("submit", () => {
         return {
             restrict: 'A',
             scope: {

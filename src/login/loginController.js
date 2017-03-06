@@ -4,8 +4,9 @@
 
 (function () {
     var app = angular.module('appAdmin');
-    app.controller("LoginController", ['$state', '$window', '$scope', 'firebaseService', function($state, $window, $scope,
-                                                                                                  firebaseService) {
+    app.controller("LoginController", LoginController);
+    LoginController.$inject = ['$state', '$window', '$scope', 'firebaseService'];
+    function LoginController($state, $window, $scope, firebaseService) {
         var ctrl = this;
         this.loading = false;
         this.email = "";
@@ -31,6 +32,6 @@
             });
         }
 
-    }]);
+    };
 
 })();

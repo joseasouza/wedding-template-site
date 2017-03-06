@@ -6,7 +6,8 @@ import "angular-input-masks";
 (function () {
 
     var appAdmin = angular.module('appAdmin', ['app', 'ui.utils.masks']);
-    appAdmin.config(function($stateProvider, $urlRouterProvider) {
+    RouteConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
+    function RouteConfig($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
         $stateProvider
             .state('login', {
@@ -21,7 +22,8 @@ import "angular-input-masks";
                 controller:  "AdminController",
                 controllerAs: "adminCtrl"
             });
-    });
+    };
+    appAdmin.config(RouteConfig);
 
     require("src/services/firebaseService.js");
     require("src/admin/adminController.js");

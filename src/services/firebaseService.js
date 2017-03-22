@@ -9,12 +9,13 @@
     function FirebaseService($q) {
 
         var config = {
-            apiKey: "AIzaSyAJXzWi0VDsHL5ZgYqcnQ-zBxHjkAFZXAg",
-            authDomain: "wedding-list-site.firebaseapp.com",
-            databaseURL: "https://wedding-list-site.firebaseio.com",
-            storageBucket: "wedding-list-site.appspot.com",
-            messagingSenderId: "271294057376"
+            apiKey: "AIzaSyBnqUxDr7mWiE632cUyT7X9OKQ5hXiLrdM",
+            authDomain: "casamento-dayana-victor.firebaseapp.com",
+            databaseURL: "https://casamento-dayana-victor.firebaseio.com",
+            storageBucket: "casamento-dayana-victor.appspot.com",
+            messagingSenderId: "348646068907"
         };
+
         firebase.initializeApp(config);
         var auth = firebase.auth();
         var database = firebase.database();

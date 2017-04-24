@@ -49,9 +49,15 @@
     </div>
 </div>
 
-<div id="modal" class="modal modal-fixed-footer">
-    <div class="modal-header">
-        <h6 class="flow-text text-center">Product Form</h6>
+<div id="modal" class="modal bottom-sheet modal-bottom-sheet__full-height">
+    <div class="modal-header pink lighten-2">
+        <div class="modal-header-content">
+            <a href="javascript:void(0)" class="left modal-action modal-close waves-effect waves-light btn-flat btn-back white-text">
+                <i class="material-icons left">arrow_back</i>
+                <span>Back</span>
+            </a>
+            <h6 class="flow-text text-center white-text modal-title">Product Form</h6>
+        </div>
     </div>
     <div class="modal-content">
         <h6 ng-hide="adminCtrl.selectedImage.url" class="center" >No image selected</h6>
@@ -77,15 +83,19 @@
 
             </div>
             <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s6 m4">
                     <input id="product_price" required ng-model="adminCtrl.selectedProduct.cost" type="text"
                              ui-money-mask class="validate">
                     <label for="product_price">Price</label>
                 </div>
 
-                <div class="input-field col s6">
+                <div class="input-field col s6 m4">
                     <input id="product_amount" required ng-model="adminCtrl.selectedProduct.amount" type="number" min="1" class="validate">
                     <label for="product_amount">Amount</label>
+                </div>
+                <div class="input-field col s12 m4">
+                    <input id="alreadyHaveIt" type="checkbox" ng-model="adminCtrl.selectedProduct.alreadyHaveIt" />
+                    <label for="alreadyHaveIt">Mark as 'We already have it'</label>
                 </div>
             </div>
 
@@ -154,10 +164,6 @@
 
         <a href="javascript:void(0)" ng-click="adminCtrl.submit()" ng-disabled="adminCtrl.loading" class="modal-action waves-effect waves-light btn left">
             <i class="material-icons left">check</i>Save
-        </a>
-
-        <a href="javascript:void(0)" ng-disabled="adminCtrl.loading" class="modal-action modal-close waves-effect waves-green btn grey">
-            <i class="material-icons left">close</i>Close
         </a>
 
     </div>

@@ -26,7 +26,7 @@
         this.products = [];
         firebaseService.onAuthStateChanged(function() {
             if (firebaseService.isLogged()) {
-                firebaseService.getProducts().then((products) => {
+                firebaseService.registerLoadProductsCallback((products) => {
                     ctrl.products = products;
                     ctrl.loading = false;
                     loadProductImages();
@@ -209,6 +209,7 @@
         this.name = "";
         this.image = "";
         this.amount = 1;
+        this.alreadyHaveIt = false;
         this.cost = 0.0;
     }
 

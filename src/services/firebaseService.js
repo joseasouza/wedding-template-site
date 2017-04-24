@@ -20,9 +20,9 @@
         var auth = firebase.auth();
         var database = firebase.database();
         var storage = firebase.storage();
-
+        var callbackProducts = () => {};
         this.saveProduct = saveProduct;
-        this.getProducts = getProducts;
+        this.registerLoadProductsCallback = registerLoadProductsCallback;
 
         this.isLogged = () => auth.currentUser != null;
         this.doLogin = (email, password) => auth.signInWithEmailAndPassword(email, password);
@@ -31,9 +31,9 @@
         this.getProductImageUrl = (productImageName) => storage.ref("/products/").child(productImageName).getDownloadURL();
 
 
-        function getProducts() {
+        function registerLoadProductsCallback(fn) {
+            callbackProducts = fn;
             var productsRef = database.ref("/products/");
-            var deferred = $q.defer();
             productsRef.on("value", (snapshot) => {
                 var products = [];
                 var snapshotValue = snapshot.val();
@@ -42,10 +42,9 @@
                     product.id = key;
                     products.push(product);
                 });
-                deferred.resolve(products);
+                callbackProducts(products);
             });
 
-            return deferred.promise;
         }
 
         function saveProduct(product, newImage, fnOnFinish) {

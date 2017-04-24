@@ -19,6 +19,7 @@
 
     <div class="col s12 m6 l4" ng-repeat="product in giftListCtrl.products
             | filter : giftListCtrl.filterService.search
+            | filter : {alreadyHaveIt: '!true'}
             | filterByCategory
             | filterByPrice
             | orderBy: '-cost'
@@ -38,11 +39,33 @@
         </div>
     </div>
 
+    <div class="col s12 m6 l4" ng-repeat="product in giftListCtrl.products
+            | filter : giftListCtrl.filterService.search
+            | filter : {alreadyHaveIt: true}
+            | filterByCategory
+            | filterByPrice
+            | orderBy: '-cost'
+            | orderBy: giftListCtrl.orderByBridGroomFav">
+
+        <div class="card gift with-padding waves-effect waves-block waves-light disabled" >
+            <div class="card-image">
+                <i class="fa fa-heart pink-text right" ng-show="giftListCtrl.filterProductService.containsTag(product, giftListCtrl.categories.BRIDE_FAV.id)"></i>
+                <i class="fa fa-heart semi-black-text right" ng-show="giftListCtrl.filterProductService.containsTag(product, giftListCtrl.categories.GROOM_FAV.id)"></i>
+                <image-onload classes="'activator'" src="product.image_url"></image-onload>
+            </div>
+            <div class="card-content">
+                <span class="activator grey-text text-darken-4">{{product.name}}</span>
+
+            </div>
+            <span class="already-have-it pink-text flow-text">JÁ GANHAMOS!</span>
+        </div>
+    </div>
+
 </div>
 
 <pre-loader show="giftListCtrl.loading"></pre-loader>
 
-<div id="modal" class="modal bottom-sheet modal-gift-list">
+<div id="modal" class="modal bottom-sheet modal-bottom-sheet__full-height">
     <div class="modal-header pink lighten-2">
         <div class="modal-header-content">
             <a href="javascript:void(0)" class="left modal-action modal-close waves-effect waves-light btn-flat btn-back white-text">

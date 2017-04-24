@@ -23,7 +23,7 @@ import "src/directives/buy-submit/buySubmit.js";
         this.filterProductService = filterProductService;
         var ctrl = this;
 
-        firebaseService.getProducts().then((products) => {
+        firebaseService.registerLoadProductsCallback((products) => {
             ctrl.products = products;
             ctrl.loading = false;
             loadProductImages();

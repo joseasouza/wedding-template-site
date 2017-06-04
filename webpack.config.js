@@ -6,7 +6,7 @@ module.exports = [{
         output: {
             path: path.resolve(__dirname, 'dist'),
             publicPath: 'dist/',
-            filename: PROD ? 'main.min.js' : 'main.js'
+            filename: 'main.min.js'
         },
         devtool: PROD ? '' : 'source-map',
         resolve: {

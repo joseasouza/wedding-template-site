@@ -1,0 +1,10 @@
+.firebaserc
+.idea/
+dist/admin.js
+dist/admin.js.map
+dist/main.js
+dist/main.js.map
+functions/
+node_modules/
+public/
+wedding-list-site.iml

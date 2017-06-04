@@ -29,6 +29,7 @@
         this.doLogout = () => auth.signOut();
         this.onAuthStateChanged = (fn) => auth.onAuthStateChanged(fn);
         this.getProductImageUrl = (productImageName) => storage.ref("/products/").child(productImageName).getDownloadURL();
+        this.confirmGuest = confirmGuest;
 
 
         function registerLoadProductsCallback(fn) {
@@ -45,6 +46,15 @@
                 callbackProducts(products);
             });
 
+        }
+
+        function confirmGuest(guestName, callback) {
+            var key = database.ref().child('/confirmedGuests/').push().key;
+            var guest = {
+                name: guestName,
+                confirmationDate: new Date().toString()
+            };
+            database.ref("/confirmedGuests/" + key).set(guest, callback);
         }
 
         function saveProduct(product, newImage, fnOnFinish) {

@@ -1,0 +1,13 @@
+{
+  "rules": {
+    ".read": "true",
+    "products" : {
+      ".read" : "true",
+      ".write": "auth != null && root.child('admin').val() == auth.uid"
+    },
+    "confirmedGuests" : {
+      ".read" : "true",
+      ".write" : "true"
+    }
+  }
+}

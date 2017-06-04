@@ -193,39 +193,44 @@ nav a.button-collapse i {
 
 }
 
-.slider .slides li img {
-    height: 100%;
-    width: 100%;
-    background-size: cover;
-    background-position: center;
-
-}
-
-/* Slider Indicators */
-.slider .indicators {
-    position: absolute;
-    text-align: left;
-    left: 2%;
-    margin: 0;
-    z-index: 40;
-    right: 0;
-}
-
-
-.slider .indicators .indicator-item.active {
-    background-color: #FFF;
-}
-
-.slider .indicators .indicator-item {
-    display: inline-block;
+.cover {
     position: relative;
-    cursor: pointer;
-    height: 8px;
-    width: 8px;
-    margin: 24px 4px;
-    background-color: rgba(255,255,255,0.5);
-    transition: background-color .3s;
-    border-radius: 50%;
+    height: 200px;
+    width: 100%;
+}
+
+@media(min-width: 500px) {
+    .cover {
+        height: 250px;
+    }
+}
+
+@media(min-width: 800px) {
+    .cover {
+        height: 400px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .cover {
+        height: 550px;
+    }
+}
+
+@media(min-width: 1500px) {
+    .cover {
+        height: 800px;
+    }
+}
+
+
+
+.cover-wrap {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .fade.ng-hide {

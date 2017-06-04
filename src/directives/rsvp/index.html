@@ -1,0 +1,45 @@
+<a id="rsvpConfirm" class="btn rsvp" modal data-target="modal-rsvp">
+    <i class="material-icons left">done_all</i><span>Confirmar Presença</span>
+</a>
+
+<div id="modal-rsvp" class="modal bottom-sheet modal-bottom-sheet__full-height">
+    <div class="modal-header pink lighten-2">
+        <div class="modal-header-content">
+            <a href="javascript:void(0)" class="left modal-action modal-close waves-effect waves-light btn-flat btn-back white-text">
+                <i class="material-icons left">arrow_back</i>
+                <span>Voltar</span>
+            </a>
+        </div>
+    </div>
+    <div class="modal-content pink lighten-5">
+
+        <div class="row">
+
+            <div class="col s10 offset-s1">
+                <div class="card">
+
+                    <div class="card-content grey lighten-3">
+                        <form ng-submit="ctrl.submit()">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Nomes" ng-disabled="ctrl.loading" id="first_name" ng-model="ctrl.name" type="text" class="validate">
+                                <label for="first_name" class="active">Your Full name and / or the names of relatives who will attend the event</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 m6 offset-m3 offset-l4">
+                                <button type="submit" ng-disabled="ctrl.loading" class="waves-effect waves-light btn">
+                                    <i class="material-icons left">done_all</i>Confirm R.S.V.P</a>
+                                </button>
+                            </div>
+                        </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+</div>

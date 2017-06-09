@@ -5,6 +5,12 @@ It also has a /admin page with authentication where you can register new product
 
 Use it as base to create your own marriage website.
 
+## How to use
+Execute:
+
+    npm install
+    webpack-dev-server
+
 Developed by José Victor Alves de Souza.
 
 Under MIT License.

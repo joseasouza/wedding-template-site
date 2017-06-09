@@ -1,0 +1,21 @@
+<div class="card-content grey lighten-3" ng-show="show">
+    <span class="card-title pink-text">
+        <form ng-submit="ctrl.submit()">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="Nomes" ng-disabled="ctrl.loading" id="first_name" ng-model="ctrl.name" type="text" class="validate">
+                                <label for="first_name" class="active">Your Full name and / or the names of relatives who will attend the event</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s12 m6 offset-m3 offset-l4">
+                                <button type="submit" ng-disabled="ctrl.loading" class="waves-effect waves-light btn">
+                                    <i class="material-icons left">done_all</i>Confirm Gift</a>
+                                </button>
+                            </div>
+                        </div>
+
+        </form>
+    </span>
+</div>

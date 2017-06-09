@@ -82,12 +82,11 @@
                 <div class="card">
                     <div class="card-image">
                         <image-onload classes="'center-image'" classes-text="'center-image center'" src="giftListCtrl.selectedProduct.image_url"></image-onload>
-                        <a tooltipped="" form="pagseguro" submit class="btn-floating btn-large halfway-fab waves-effect waves-light modal-action modal-close tooltipped"
-                           data-position="top" data-delay="50" data-tooltip="Clique para presentear!">
+                        <a  ng-click="giftListCtrl.give()" class="btn-floating btn-large halfway-fab waves-effect waves-light">
                             <i class="material-icons">card_giftcard</i></a>
                     </div>
 
-                    <div class="card-content grey lighten-3">
+                    <div ng-show="!giftListCtrl.showGiveProductForm" class="card-content grey lighten-3">
                         <span class="card-title pink-text">
                             {{giftListCtrl.selectedProduct.name}}
                         </span>
@@ -147,6 +146,8 @@
                             </li>
                         </ul>
                     </div>
+                    <give-button show="giftListCtrl.showGiveProductForm"></give-button>
+
                 </div>
             </div>
         </div>

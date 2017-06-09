@@ -21,6 +21,8 @@ import "src/directives/buy-submit/buySubmit.js";
         this.categories = Categories;
         this.selectedProduct = {tags: []};
         this.filterProductService = filterProductService;
+        this.give = give;
+        this.showGiveProductForm = false;
         var ctrl = this;
 
         firebaseService.registerLoadProductsCallback((products) => {
@@ -63,6 +65,10 @@ import "src/directives/buy-submit/buySubmit.js";
         function clickItem(product) {
             ctrl.selectedProduct = product;
             ctrl.showModal = true;
+        }
+
+        function give() {
+            this.showGiveProductForm = !this.showGiveProductForm;
         }
 
         $('.modal').modal();

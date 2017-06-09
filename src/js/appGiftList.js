@@ -14,5 +14,6 @@ import "src/js/app.js"
     require("src/gifts-list/filter-nav/controller.js");
     require("src/how-to-get-there/controller.js");
     require("src/directives/rsvp/rsvp.directive.js");
+    require("src/directives/give-button/give-button.directive.js");
 
 })();

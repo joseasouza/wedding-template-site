@@ -5,6 +5,8 @@ It also has a /admin page with authentication where you can register new product
 
 Use it as base to create your own marriage website.
 
+[View an example](http://casamento-dayana-victor.firebaseapp.com)
+
 ## How to use
 Execute:
 

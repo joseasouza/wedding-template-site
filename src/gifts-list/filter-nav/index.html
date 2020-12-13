@@ -7,22 +7,22 @@
     </div>
 
     <div id="filter-nav" class="side-nav filter-nav">
-        <h6 class="center header-filter-text">Filtre os presentes por categorias</h6>
-        <h6>Por onde você gostaria de comprar?</h6>
+        <h6 class="center header-filter-text">Filter the gifts by categories</h6>
+        <h6>Where would you like to buy from?</h6>
         <ul>
             <li>
-                <input type="checkbox" id="byInternet" ng-model="filterCtrl.filterTags.buyFromInternet"/>
-                <label for="byInternet">Pela Internet</label>
+                <input type="checkbox" id="byInternet" ng-model="filterCtrl.filterService.filterTags.buyFromInternet"/>
+                <label for="byInternet">From online stores</label>
             </li>
             <li>
-                <input type="checkbox" id="byNatal" ng-model="filterCtrl.filterTags.buyLocal"/>
-                <label for="byNatal">Em alguma loja em Natal</label>
+                <input type="checkbox" id="byNatal" ng-model="filterCtrl.filterService.filterTags.buyLocal"/>
+                <label for="byNatal">In any store located in Natal</label>
             </li>
         </ul>
-        <h6>Média de Preço?</h6>
+        <h6>Any price average?</h6>
         <div id="range" class="range"></div>
         <h6 id="valor-range" class="range-price"></h6>
-        <h6>Outras Categorias</h6>
+        <h6>Other Categories</h6>
         <ul>
             <li ng-repeat="category in filterCtrl.categoriesArray | filter : {showInAdminModal: true}">
                 <input type="checkbox" id="{{category.id}}" ng-model="filterCtrl.filterService.filterTags[category.attr]"/>

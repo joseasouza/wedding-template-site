@@ -11,25 +11,18 @@
     function CoverController($interval) {
 
         var images = [
+            
+
             { "background-image"      : "url(/src/images/cover_0.jpg",
-              "background-position-y" : "20%"                    },
-
-            { "background-image"      : "url(/src/images/cover_1.jpg",
-              "background-position-y" : "0%"                    },
-
-            { "background-image"      : "url(/src/images/cover_2.jpg",
               "background-position-y" : "30%"                    },
 
-            { "background-image"      : "url(/src/images/cover_3.jpg",
+            { "background-image"      : "url(/src/images/cover_1.jpg",
               "background-position-y" : "22%"                    },
 
-            { "background-image"      : "url(/src/images/cover_4.jpg",
-              "background-position-y" : "22%"                    },
-
-            { "background-image"      : "url(/src/images/cover_5.jpg",
+            { "background-image"      : "url(/src/images/cover_2.jpg",
               "background-position-y" : "0%"                    },
 
-            { "background-image"      : "url(/src/images/cover_6.jpg",
+            { "background-image"      : "url(/src/images/cover_3.jpg",
               "background-position-y" : "75%"                    }
 
         ];

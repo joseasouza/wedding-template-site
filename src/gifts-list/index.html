@@ -1,12 +1,12 @@
 <h5 class="semi-black-text motion-picture-font-text center">
-    Sugestões de Presentes
+    Gifts Suggestions
 </h5>
 
 <div class="card search-input">
     <div class="row">
         <div class="col s12">
             <div class="input-field">
-                <input id="search" ng-model="giftListCtrl.filterService.search" type="search" placeholder="Enter here to search for gifts" required="" ng-disabled="giftListCtrl.loading">
+                <input id="search" ng-model="giftListCtrl.filterService.search" type="search" placeholder="Type here to search for gifts" required="" ng-disabled="giftListCtrl.loading">
                 <label for="search" class=""><i class="material-icons">search</i></label>
                 <i class="material-icons">close</i>
             </div>
@@ -57,7 +57,7 @@
                 <span class="activator grey-text text-darken-4">{{product.name}}</span>
 
             </div>
-            <span class="already-have-it pink-text flow-text">JÁ GANHAMOS!</span>
+            <span class="already-have-it pink-text flow-text">WE ALREADY WON!</span>
         </div>
     </div>
 
@@ -70,7 +70,7 @@
         <div class="modal-header-content">
             <a href="javascript:void(0)" class="left modal-action modal-close waves-effect waves-light btn-flat btn-back white-text">
                 <i class="material-icons left">arrow_back</i>
-                <span>Voltar</span>
+                <span>Back</span>
             </a>
         </div>
     </div>
@@ -91,16 +91,16 @@
                             {{giftListCtrl.selectedProduct.name}}
                         </span>
 
-                        <p class="semi-black-text">Preço Médio: {{giftListCtrl.selectedProduct.cost | currency:'R$'}}
+                        <p class="semi-black-text">Average Price: {{giftListCtrl.selectedProduct.cost | currency:'R$'}}
                             <span ng-if="giftListCtrl.selectedProduct.amount > 1">
                <br/>Quantidade: {{giftListCtrl.selectedProduct.amount}}
            </span>
                         </p>
-                        <h5 class="how-to-give">Como presentear os noivos com este produto</h5>
+                        <h5 class="how-to-give">How to give them this gift:</h5>
 
                         <ul class="collapsible popout" data-collapsible="accordion">
                             <li ng-show="giftListCtrl.filterProductService.containsTag(giftListCtrl.selectedProduct, giftListCtrl.categories.BUY_LOCAL.id)">
-                                <div class="collapsible-header"><i class="material-icons">place</i>Comprar em Natal</div>
+                                <div class="collapsible-header"><i class="material-icons">place</i>But it in Natal</div>
                                 <div class="collapsible-body">
                                     <div class="collection">
                                         <a ng-href="{{store.local}}" target="_blank" class="collection-item"
@@ -110,7 +110,7 @@
                                 </div>
                             </li>
                             <li ng-show="giftListCtrl.filterProductService.containsTag(giftListCtrl.selectedProduct, giftListCtrl.categories.BUY_FROM_INTERNET.id)">
-                                <div class="collapsible-header"><i class="material-icons">computer</i>Comprar pela Internet</div>
+                                <div class="collapsible-header"><i class="material-icons">computer</i>Buy it from Internet</div>
                                 <div class="collapsible-body">
                                     <div class="collection">
                                         <a  ng-href="{{store.url}}" target="_blank" class="collection-item"
@@ -119,18 +119,13 @@
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header"><i class="material-icons">attach_money</i>Transferir o valor do produto para os noivos</div>
+                                <div class="collapsible-header"><i class="material-icons">attach_money</i>Make a transfer to the groom's bank account</div>
                                 <div class="collapsible-body">
                                     <div class="collection">
                                         <!--  !!!!!! -->
                                         <div class="collection-item">
-                                            <h6>Banco do Brasil:</h6>
-                                            <p class="account-detail">Agência: 1668-3<br/>
-                                                Conta: 42097-2</p>
-                                            <h6>Caixa Econômica Federal:</h6>
-                                            <p class="account-detail">Agência: 0035<br/>
-                                                Operação: 013<br/>
-                                                Conta: 277996-2</p>
+                                            <h6>Example Bank:</h6>
+                                            <p class="account-detail">bank account information
                                         </div>
                                         <a class="collection-item" submit form="pagseguro" href="#">
                                             <img src="https://stc.pagseguro.uol.com.br/public/img/botoes/pagamentos/209x48-comprar-assina.gif"
